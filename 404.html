@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="height=device-height, 
+                      width=device-width, initial-scale=1.0, 
+                      minimum-scale=1.0, maximum-scale=1.0, 
+                      user-scalable=no, target-densitydpi=device-dpi">
+  <meta name="description" content="Nima Niazi - Personal landing page - Musician/Developer">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Nima Niazi" />
+  <meta property="og:description" content="Personal Landing Page - Nima Niazi" />
+  <meta property="og:image" content="https://nimaniazi.com/static/avatar.jpg">
+  <meta property="og:url" content="https://www.nimaniazi.com" />
+  <meta property="og:site_name" content="Nima Niazi's Personal Landing Page" />
+  <meta name="twitter:title" content="Nima Niazi">
+  <meta name="twitter:description" content="Personal Landing Page - Nima Niazi">
+  <meta name="twitter:image" content="https://nimaniazi.com/static/avatar.jpg">
+  <meta property="twitter:domain" content="nimaniazi.com">
+  <meta property="twitter:url" content="https://nimaniazi.com/">
+  <link rel="stylesheet" href="style.css">
+  <script src="scirpt.js" defer></script>
+  <title>Nima Niazi - Personal Landing Page</title>
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+</head>
+
+<body data-first>
+
+  <script>
+    if (localStorage.getItem("theme")) {
+      let theme = "first";
+      switch (parseInt(localStorage.getItem("theme"))) {
+        case 0:
+          theme = "first";
+          break;
+        case 1:
+          theme = "second";
+          break;
+        case 2:
+          theme = "third";
+          break;
+        case 3:
+          theme = "fourth";
+          break;
+        case 4:
+          theme = "fifth";
+          break;
+        case 5:
+          theme = "sixth";
+          break;
+        default:
+          theme = "first";
+          localStorage.setItem("theme", "0");
+          break;
+      }
+      Object.keys(document.body.dataset).forEach((dataKey) => {
+        delete document.body.dataset[dataKey];
+      });
+      document.body.setAttribute(`data-${theme}`, true);
+    }
+  </script>
+  <div style="all:unset; width: 100%;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.562));" class="sections">
+
+    <div data-section id="one">
+      <div data-change-theme class="change-theme">
+        <div tabindex="0" id="first">
+        </div>
+        <div tabindex="0" id="second">
+        </div>
+        <div tabindex="0" id="third">
+        </div>
+      </div>
+      <h1>404</h1>
+    </div>
+    <div data-section id="two">
+      <h1>404</h1>
+    </div>
+    <div data-section id="three">
+      <h1>404</h1>
+    </div>
+    <div data-section id="four">
+      <h1>404</h1>
+    </div>
+    <div data-section id="five">
+      <h1>404</h1>
+    </div>
+    <div data-section id="six">
+      <h1>404</h1>
+    </div>
+    <div></div>
+  </div>
+  <div class="modal visible">
+    <p style="padding:2em;background: white;color:black;">You're lost! No such url exists on this website. Go back to
+      <a style="color:black" href="/">home</a>.
+    </p>
+  </div>
+
+</body>
+
+
+</html>
