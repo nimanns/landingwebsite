@@ -22,9 +22,6 @@ prevBtn.classList.add("navigator");
 const imageCount = 10;
 const iterateNext = () => {
   if (!currentImageOnModal) return;
-  // let currentIndex = parseInt(
-  //   currentImageOnModal.src.charAt(currentImageOnModal.src.length - 5)
-  // );
   let currentIndex = currentImageIndex;
   if (isNaN(currentIndex)) return;
   if (currentIndex < imageCount) {
@@ -39,9 +36,6 @@ const iterateNext = () => {
 
 const iteratePrevious = () => {
   if (!currentImageOnModal) return;
-  // let currentIndex = parseInt(
-  //   currentImageOnModal.src.charAt(currentImageOnModal.src.length - 5)
-  // );
   let currentIndex = currentImageIndex;
   if (isNaN(currentIndex)) return;
   if (currentIndex > 1) {
@@ -115,12 +109,6 @@ document.onreadystatechange = function (e) {
     }
   }
 };
-
-// window.addEventListener("load", () => {
-//   if (localStorage.getItem("theme")) {
-//     changeTheme(localStorage.getItem("theme"));
-//   }
-// });
 
 function changeTheme(index) {
   let theme = "first";
@@ -335,13 +323,7 @@ document.querySelectorAll("[data-image]").forEach((image, ind) => {
       document.addEventListener("keydown", handleGalleryKeyDown);
     }
     modal.classList.add("visible");
-    // document.body.style.overflow = "hidden";
     imageOnModal.src = image.src;
-    // imageOnModal.style.height = "100%";
-    // imageOnModal.style.background = `url(${image.src})`;
-    // imageOnModal.style.backgroundRepeat = "no-repeat";
-    // imageOnModal.style.backgroundSize = "contain";
-    // imageOnModal.style.backgroundPosition = "center";
     imageWrapper.appendChild(imageOnModal);
     modal.appendChild(imageWrapper);
     image.style.opacity = 0;
