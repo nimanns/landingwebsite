@@ -1,0 +1,26 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@500&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap");
+
+body {
+  margin: 0;
+  background-color: #3786d1;
+  font-family: "Noto Sans Mono", monospace;
+  font-size: 22px;
+}
+
+div#main {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: transparent;
+  padding: 1em;
+}
+
+a,
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
