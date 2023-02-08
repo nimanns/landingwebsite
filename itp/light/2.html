@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITP Blog - Light and Interactivity</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="main">
+    <h1><a href="/itp">ITP Blog</a></h1>
+    <h2><a href="/itp/light/">Light and Interactivity</a></h2>
+    <h3>
+      Week 2
+    </h3>
+    <p>Observing how a candle light is and trying to recreate that using a neopixel didn't sound so challenging at first
+      but the more I paid attention to how candle lights work the more I realized how hard it is to recreate that using
+      numbers. And I think our perception of how candle light is is different to how it actually is, in real
+      life it's mostly static with slight movements (if it's in a room with little to no air circulation) but our (or
+      rather my) perception of it has more movement and more flickering. </p>
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <iframe src="https://drive.google.com/file/d/19z3spMzFfG6necwpo6rAVBKPlIOYrq4J/preview" width="100%" height="480"
+        allow="autoplay"></iframe>
+    </div>
+    <h3>Making the candle</h3>
+    <p> I used the <a
+        href="https://github.com/tigoe/NeoPixel_examples/blob/main/NeoPixelTester/NeoPixelTester.ino">NeoPixelTester</a>
+      to test the individual pixels, and then duplicated the code and started going from there, I changed the color
+      values to ColorHSV so that I could easily sweep between yellow and light orange (as discussed in the class) I also
+      played a lot with the saturation and value numbers to get a more white-ish shade rather than colors, because the
+      thing with candle light is that the edges look more yellow than the inside. For the hue value, I divided the
+      pixels to two sides, I used three values for each side and used a simple linear interpolation function to sweep
+      between the three values randomly. I also added a counter variable so that it would only change the value at a
+      certain rate and it would allow the actual sweep to be visible:</p>
+
+    <!-- HTML generated using hilite.me -->
+    <div
+      style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+      <pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">float</span> <span style="color: #f8f8f2">vals1[</span><span style="color: #ae81ff">3</span><span style="color: #f8f8f2">]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">{</span><span style="color: #ae81ff">3000.f</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">3500.f</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">4500.f</span><span style="color: #f8f8f2">};</span>
+<span style="color: #66d9ef">float</span> <span style="color: #f8f8f2">vals2[</span><span style="color: #ae81ff">3</span><span style="color: #f8f8f2">]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">{</span><span style="color: #ae81ff">2900.f</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">3200.f</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">3300.f</span><span style="color: #f8f8f2">};</span>
+<span style="color: #66d9ef">float</span> <span style="color: #f8f8f2">changer1</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">3000.f</span><span style="color: #f8f8f2">;</span>
+<span style="color: #66d9ef">float</span> <span style="color: #f8f8f2">changer2</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">3000.f</span><span style="color: #f8f8f2">;</span>
+<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">counter</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span>
+
+<span style="color: #66d9ef">float</span> <span style="color: #a6e22e">lerp</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">float</span> <span style="color: #f8f8f2">a,</span> <span style="color: #66d9ef">float</span> <span style="color: #f8f8f2">b,</span> <span style="color: #66d9ef">float</span> <span style="color: #f8f8f2">t)</span> <span style="color: #f8f8f2">{</span>
+  <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">(</span><span style="color: #ae81ff">1.0</span> <span style="color: #f92672">-</span> <span style="color: #f8f8f2">t)</span> <span style="color: #f92672">*</span> <span style="color: #f8f8f2">a</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">t</span> <span style="color: #f92672">*</span> <span style="color: #f8f8f2">b;</span>
+<span style="color: #f8f8f2">}</span>
+
+<span style="color: #66d9ef">void</span> <span style="color: #a6e22e">loop</span><span style="color: #f8f8f2">(){</span>
+  <span style="color: #f8f8f2">counter</span><span style="color: #f92672">++</span><span style="color: #f8f8f2">;</span>
+  <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(counter</span> <span style="color: #f92672">==</span> <span style="color: #ae81ff">30</span><span style="color: #f8f8f2">)</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #f8f8f2">changer1</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">vals1[(</span><span style="color: #66d9ef">int</span><span style="color: #f8f8f2">)random(</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">3</span><span style="color: #f8f8f2">)];</span>
+    <span style="color: #f8f8f2">changer2</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">vals2[(</span><span style="color: #66d9ef">int</span><span style="color: #f8f8f2">)random(</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">3</span><span style="color: #f8f8f2">)];</span>
+    <span style="color: #f8f8f2">counter</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span>
+  <span style="color: #f8f8f2">}</span>
+
+  <span style="color: #f8f8f2">h1</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">lerp(h1,</span> <span style="color: #f8f8f2">changer1,</span> <span style="color: #ae81ff">.02</span><span style="color: #f8f8f2">);</span>
+  <span style="color: #f8f8f2">h2</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">lerp(h2,</span> <span style="color: #f8f8f2">changer2,</span> <span style="color: #ae81ff">.1</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">}</span>
+</pre>
+    </div>
+
+    <p>
+      The strange thing was that I could clearly see a subtle change in color with the LEDs (which is what I wanted
+      rather than a stuttering and flickering effect) but the camera wouldn't capture it, maybe it has something to do
+      with the framerate, so I adjusted the values until I could see the change in color on camera (still more subtle
+      than with my eyes).
+
+    </p>
+
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <iframe src="https://drive.google.com/file/d/19xgS3Onasa9mGmy-ZvHJo3KKLCv-OOei/preview" width="100%" height="480"
+        allow="autoplay"></iframe>
+    </div>
+    <p>I think I could keep readjusting the values and would never be fully satisfied, but for now I think it's close to
+      a flame dancing.</p>
+    <p>For the container of the candle, I recycled stuff from the junk shelf and put them together like a minature
+      bonfire kind of vibe. I used circular laser-cut acrylic pieces for diffusing the light.</p>
+
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <iframe src="https://drive.google.com/file/d/19kNOpULckmldz8GxpK3O-EfLtCCWvS4N/preview" width="640" height="480"
+        allow="autoplay"></iframe>
+    </div>
+  </div>
+</body>
+
+</html>
