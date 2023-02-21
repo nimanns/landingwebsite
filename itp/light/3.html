@@ -17,7 +17,14 @@
     <h3>
       Week 3
     </h3>
-
+    <p>This week we were supposed to build a controller for a 12-volt light controller, the schematic was pretty
+      straightforward. With an arduino connected to a MOSFET transistor controlling the ground of the 12 volt light. I
+      used a protoboard to solder all the parts and have a solid and permanent rig.</p>
+    <iframe src="https://drive.google.com/file/d/1wMEGjbWDI7OJvFTkk9POj4Vgf5avoAo7/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <p>I played around with the input to make it less noisy and shaky, with no avail. I tried adding a delay which
+      helped but also introduced latency. Then as suggested in class I tried the Kalman filter which helped a lot with
+      the smoothing of the reading of my pot. Made the fade a lot smoother and almost no flickers with lower values.</p>
     <p></p>
   </div>
 </body>
