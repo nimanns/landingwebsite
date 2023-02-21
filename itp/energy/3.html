@@ -14,7 +14,37 @@
   <div id="main">
     <h1><a href="/itp">ITP Blog</a></h1>
     <h2><a href="/itp/energy/">Energy</a></h2>
-    <h3>Week 3</h3>
+    <h3>Week 3&4 - Kinetic Project</h3>
+    <p>Our kinetic project is a roller paint brush mounted on a stepper motor which generates electricity and turns on a
+      strip of LEDs. First we connected the motor straight to a strip of LEDs in parallel and all the LEDs turned on but
+      as we found out the problem with this method is that the LEDs flicker, it's so fast that is not apparent for the
+      human eye but with slow motion recordings we can clearly see it happening (because the stepper motor is generating
+      AC.)</p>
+
+    <p>So we decided to go with using a rectifier to get a smoother result, we also added the capacitors but we had to
+      experiment with different types and found that the 10000µF ones worked the best in our case. </p>
+
+    <p>We faced lots of fabrication challenges, because there was not an easy way of mounting a stepper motor (which is
+      chunky and heavy) to a slip roller paint brush handle.
+    </p>
+    <iframe src="https://drive.google.com/file/d/1n2Agt2_9vdc1ge3Sl9HOwqQoSuLvvgPs/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <p>I tried mounting a wooden plate to the back of my stepper motor but then the screws wouldn't go all the way and
+      the stepper motor would not be nice and snug and functioning</p>
+    <iframe src="https://drive.google.com/file/d/1ayFVOdQRP8v7UE_xGUuZE2fUSKxhwQOo/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+
+    <p>
+      So we decided to fabricate a handle around our motor instead. With some wood work and help from the shop we could
+      make a wooden handle and using a NEMA motor mount we mounted the stepper to the wooden handle.</p>
+    <iframe src="https://drive.google.com/file/d/1zbTzYAO-stqWcrRfoPzxencdb4mHcSEB/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <p>Unfortunately our rectifiers got fried in the process of soldering, so we made our own rectifiers using diodes.
+      Used a protoboard to solder all the necessary parts and have them in a flat circuit:</p>
+    <iframe src="https://drive.google.com/file/d/1VRswffNQHyn9HjpFduo3CgCl-ovcqym4/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+
+
   </div>
 </body>
 
