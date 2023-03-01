@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITP Blog - Light and Interactivity</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="main">
+    <h1><a href="/itp">ITP Blog</a></h1>
+    <h2><a href="/itp/light/">Light and Interactivity</a></h2>
+    <h3>
+      Week 4&5
+    </h3>
+    <p>Diving deeper into my 12-volt light kit, I decided to tackle with the Attiny85, the idea of having a smaller
+      controller and setup was tempting. The procedure was pretty straightforward, I used my arduino nano as the
+      programmer and uploaded a simple blink sketch to the attiny, one thing I noticed right away was that the
+      delay(1000) for some reason took so much longer than 1 second to complete, maybe has to do with the internal
+      clock.</p>
+    <iframe src="https://drive.google.com/file/d/1jBJ6R731IFljYNPbkZ2VIVFwOLvSHoTg/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <p>I took bits of code from my original 12 volt arduino file, I used the Kalman filter again to smooth
+      out the input, I also changed the code to exponential fade, my personal favorite. But the reduced resolution to 8
+      bits was pretty obvious, specially in the dimmer spectrum, the corn bulb would not light up at all past a
+      certain point, whereas with my nano it did.</p>
+    <iframe src="https://drive.google.com/file/d/1Gq0TFFxQ06kZ7l1Pzg7DkeQTUU_cAhN5/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <p>
+      Switching my light bulb to an MR16, I noticed it flickered with lower PWM values, I thought it was still the noise
+      from my input, but after changing the code and testing with the corn bulb, I think it's the light that does not
+      like the values below a certain point, for now I have it as is but I think the only work around in this case would
+      be to stop sending PWM below a certain threshold. Or maybe it's the lower resolution on the attiny causing it.
+    </p>
+  </div>
+</body>
+
+</html>
