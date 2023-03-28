@@ -15,6 +15,32 @@
     <h1><a href="/itp">ITP Blog</a></h1>
     <h2><a href="/itp/energy/">Energy</a></h2>
     <h3>Solar Project</h3>
+    <p>
+      The most valuable and meaningful thing about solar energy and harnessing it to generate electricity is how readily
+      available (considering the normal weather conditions) it is and how environmental-friendly it is, but something I
+      personally like about it is the fact that my project can be less dependant on an external device (a power supply).
+      Although technically, the sun (or the solar panel) in this case is the power supply.
+    </p>
+    <iframe src="https://drive.google.com/file/d/1GuIbvlXpqAebbvPJrLtWcY0Z5-KOIV-4/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <p>The solar project was all about running some sort of computation using the solar panel that we had. And I wanted
+      to be as minimal as possible, the
+      arduino nano iot was not minimal enough for me so I decided to go even lower and use the Attiny85 as my
+      microcontroller. I also had a 74HC595 shift register IC. I hooked up the AtTiny to my nano IoT and used the nano
+      as a programmer for it. I need three digital out pins which the AtTiny has, one for data one for latch and one for
+      the clock. The way the shift register works is that first we write some bits through the data pin, and while the
+      clock is running to synchronize the shifting of the data, we turn latch on and off to shift the bits to the
+      output. My first idea was to make a neopixel like strip of LEDs and light them up in patterns. Although the code
+      for this bit was simple, I decided to go further and wanted to make a simple binary calculator. But now after
+      hours of messing with the shift register I'm not even sure if this is the best tool to make a calculator with. I
+      may need to clear the memory because the 74HC595 keeps the previous data in memory until it is shifted to the
+      output, which makes the process much more complicated. But as far as running computation using a solar panel, this
+      project was successful! To go further I think I want to expand it and make a counter or a calculator. I used the
+      energy cart since it was rainy and not much sunlight was available outside.</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/sYz7QRSg_VU" title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
 
   </div>
 </body>
