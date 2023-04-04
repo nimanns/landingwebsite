@@ -25,6 +25,10 @@ a:hover {
   text-decoration: underline;
 }
 
+a {
+  text-decoration: underline;
+}
+
 iframe {
   border: none;
   width: 100%;
