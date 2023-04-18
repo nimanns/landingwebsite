@@ -4,5 +4,6 @@ body {
 
 blockquote {
   border-left: 10px solid #cacaca;
-  padding: 2em;
+  margin: 0 auto;
+  padding: 1em;
 }
