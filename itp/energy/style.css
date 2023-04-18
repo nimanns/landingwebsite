@@ -1,3 +1,8 @@
 body {
   background-color: #825fe2;
 }
+
+blockquote {
+  border-left: 10px solid #cacaca;
+  padding: 2em;
+}
