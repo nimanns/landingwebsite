@@ -26,6 +26,53 @@
     <h1><a href="/itp">ITP Blog</a></h1>
     <h2><a href="/itp/energy/">Energy</a></h2>
     <h3>Final Project - The Kinetic Wah</h3>
+    <p>I had this idea in class just before I had to talk about my idea, something so spontaneous. I had always wanted
+      to tap into guitar pedals and understand what was going on, I have done simple dsp stuff with software but never
+      hardware, so I was really excited to try that, the energy aspect of this project made sense as kinetic for me,
+      because we already operate these pedals with our feet so much, that's a lot of kinetic energy wasted that could be
+      turned into electricity.</p>
+    <p>I started by looking into what were my options in terms of dsp, I could go down the microcontroller route but it
+      just didn't seem feasible with kinetic, because of how insignificant it can be and how much power even the
+      simplest microcontrollers need to operate, also if I wanted a better quality audio I had to choose from higher
+      models which would require even more power, and anything digital doesn't like voltage coming in and dropping,
+      which will inevitably be the case with kinetic, unless a battery of some sort is also implemented.</p>
+    <p>This lead me to a search for analog circuits, most wah circuits I found online had an inductor, which I wanted to
+      avoid, so I found one schematic which didn't require an inductor to operate called the <a
+        href="http://beavisaudio.com/projects/colorsoundwah/" target="_blank">Colorsound Inductorless Wah</a>. The first
+      prototype I made on a breadboard was surprisingly working after a few minor debugs!
+    </p>
+    <iframe src="https://drive.google.com/file/d/1bW3c0DIPA9EfwQnwsOwfIGU31SeyB6pn/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <p>As my next step I wanted to try and understand what each bit of the circuit was doing to the sound, I found out
+      that the fixed resistor before the potentiometer that controlled the wah frequency range, I experimented with
+      different values to get the tone that I thought sounded better.</p>
+    <iframe src="https://drive.google.com/file/d/1bQqSwDaT_v7Cwss8y1Be8ZN5kRWuZRAF/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <iframe src="https://drive.google.com/file/d/1b5iUBjhF2if9cMvrBdCKdLPS02G10b2R/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <p>Next I had to power the circuit using kinetic energy. I realized this circuit needs very little current to run,
+      around 10mA, so that was good news. I made my own full bridge rectifier circuit using four diodes and used the
+      stepper motor I used previously for my kinetic energy, since it produced enough power I didn't want to go through
+      the process of making my own generator.</p>
+    <p>I connected my stepper to the circuit and the first thing I noticed was when I moved the stepper I could hear it
+      turning through the amplifier. Adding a capacitor reduced the noise significantly while storing some electricity
+      so that the circuit does not die completely after the stepper stops turning.</p>
+    <iframe src="https://drive.google.com/file/d/1b4Pbn3tDbpl_YSdS3-lqD6CiAMA7vkjp/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <p>I personally can hear a difference in tone when it's powered using a power supply vs kinetic powered, but that's
+      to be expected, and I don't think one is necessarily better than the other, but maybe the intended tone is the one
+      with a power supply.</p>
+    <p>I soldered all the parts on a protoboard to get rid of loose wires and clicks and noise.</p>
+    <iframe src="https://drive.google.com/file/d/1bBhQt1lvbILgvT11W3CsP0ZwSTEzSdDU/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <p>At this point I think the basic concept is there and it's so surprising to me that it works. My next step is to
+      build an enclosure so that it holds all of the parts together and a gear system that turns both the stepper and
+      the potentiometer with the pedal movement, I'm experimenting with wood and also 3D modeling for now.</p>
+
+
+    <iframe src="https://drive.google.com/file/d/15TAJWQTKiNcbhfX9gj2AWqU_X0T4-CHL/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+
   </div>
 </body>
 
