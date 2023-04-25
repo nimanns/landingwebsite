@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITP Blog - Light and Interactivity</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="main">
+    <h1><a href="/itp">ITP Blog</a></h1>
+    <h2><a href="/itp/light/">Light and Interactivity</a></h2>
+    <h3>
+      Final Project Progress 2
+    </h3>
+    <p>This week I focused on the experiment we wanted to have with machine learning and gesture detection and the
+      results are not bad, although the model needs more fine tuning and training it can almost detect the gesture.</p>
+    <p>We had to use the Arduino nano ble since it's one of the few microcontrollers that currently support
+      tensorflowlite library, I collected 200 data samples of 2 seconds of sensor reading sampled in 100ms time
+      intervals, so each row of data had 20 numbers, I then generated around 200 random noise values. Not an ideal way
+      to do it but good enough for a basic prototype.</p>
+    <p>Below is the arduino code used to load the model and get the sensor readings and run it through the model:</p>
+    <script
+      src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fnimanns%2Farduinobletofsensorgesturemodel%2Fblob%2Fmaster%2Flightsensorprediction.ino&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
+    <p>
+      The model performs ok considering that it was only trained for 10 epochs and with 400 lines of data. It's
+      detecting the gesture but sometimes with one wave it also detects the gesture which means it may need more data to
+      differentiate between one hand wave and back and forth.
+    </p>
+    <iframe src="https://drive.google.com/file/d/1e61J-899lNJLwzO-wflHQHJv6uzM2Rc8/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <iframe src="https://drive.google.com/file/d/1dySjFo3HytrmPqX7PEL_LWC1fQexO1uk/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <p>In terms of the shape and the fabrication, we have finalized the form and built a small prototype and doing so we
+      found out that this shape could probably be used on its own and in various angles rather than being stuck on a
+      base, so we're considering fitting all the electronics inside the fixture.</p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr;gap: 1em">
+
+      <iframe src="https://drive.google.com/file/d/1cvtgCZrAXT2AouMtZIMlvFkP-jxggpSa/preview" width="640" height="480"
+        allow="autoplay"></iframe>
+      <iframe src="https://drive.google.com/file/d/1crg08rTAr1Ag87f11WpK4X0r4bwrUNP3/preview" width="640" height="480"
+        allow="autoplay"></iframe>
+      <iframe src="https://drive.google.com/file/d/1ciVH6UD6IWju_o66krG5SGpdoClaLgFx/preview" width="640" height="480"
+        allow="autoplay"></iframe>
+      <iframe src="https://drive.google.com/file/d/1cfpcbJAZifSMBu8TLVAtgaerCsNTJ8sX/preview" width="640" height="480"
+        allow="autoplay"></iframe>
+      <iframe src="https://drive.google.com/file/d/1ceytxNX5VaiBzDdPlX7lTdCGe9IXSgw2/preview" width="640" height="480"
+        allow="autoplay"></iframe>
+      <iframe src="https://drive.google.com/file/d/1cZ4-PtSJEB0M9JmYp3LIT70jCUd2WqUG/preview" width="640" height="480"
+        allow="autoplay"></iframe>
+      <iframe src="https://drive.google.com/file/d/1cSd6sR1JUJuoVBloC7duWac8SBqORw47/preview" width="640" height="480"
+        allow="autoplay"></iframe>
+      <iframe src="https://drive.google.com/file/d/1cOSGiuZud6Q41bE8mO62Ye3BLtOTEHEO/preview" width="640" height="480"
+        allow="autoplay"></iframe>
+      <iframe src="https://drive.google.com/file/d/1cK0XY7QrokT4ILTMj2bDGaA84p0g83SQ/preview" width="640" height="480"
+        allow="autoplay"></iframe>
+      <iframe src="https://drive.google.com/file/d/1cEt6WwjgN7fMNFEdDqHJEPTp10Rr9Bll/preview" width="640" height="480"
+        allow="autoplay"></iframe>
+      <iframe src="https://drive.google.com/file/d/1c4n-YHeSXA3aquc0zXQuX43LeYTufZdy/preview" width="640" height="480"
+        allow="autoplay"></iframe>
+      <iframe src="https://drive.google.com/file/d/1brSt9k0NlHHnfSYCQ93NMQ5Qr0VBhCB0/preview" width="640" height="480"
+        allow="autoplay"></iframe>
+      <iframe src="https://drive.google.com/file/d/1bkUU6H--OlouOzikjs-wPwVwUXTB2_QN/preview" width="640" height="480"
+        allow="autoplay"></iframe>
+
+    </div>
+  </div>
+</body>
+
+</html>
