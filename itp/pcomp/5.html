@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITP - Physical Computing Blog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1 class="title"><a href="/" style="color:#e1e5f2">Physcial Computing Blog
+    </a>
+  </h1>
+  <main>
+
+    <article>
+      <h2>
+        <a href="5">
+          Week 5 - Transistors, relays, etc.
+        </a>
+      </h2>
+      <p>
+        I had been wondering about the limitaions of Arduino's voltage out before. I knew there had to be a way to
+        control a more power-hungry circuit using the Arduino but didn't know where to look. Transistors, I would say,
+        are the most important piece of electronics in my opinion, they open up doors to lots of new possibilities.
+      </p>
+
+      <div style="width:90%; display:flex; margin:10px auto;align-items: center;justify-content: center;height:auto;">
+        <iframe style="width:auto;" src="https://drive.google.com/file/d/17QlZSWioy2343CHiomNKt7Ek5X2Gd6t6/preview"
+          allow="fullscreen"></iframe>
+      </div>
+      <p>
+        How they function is not as intuitive as I'd like it to be. I still find it hard to grasp even though I know
+        what goes where in terms of the pins. I think it's best to think of it as a black box for now that by getting a
+        small voltage can trigger another circuit with fast speeds.
+      </p>
+      <div style="width:auto; display:flex; margin:10px auto;align-items: center;justify-content: center;height:auto">
+        <iframe style="" src="https://drive.google.com/file/d/1JKn0iPMvPhOilpCd_uYHtdNp-FZoRw_g/preview"
+          allow="fullscreen"></iframe>
+      </div>
+      <p>
+        I faced some issues during the H-Bridge lab. I was frustrated because everything seemed to be right but I still
+        saw no movement on my DC motor. I inspected all my connections, tried a battery thinking Arduino's 5Vout was
+        not enough to drive the motor to finally realize that I had connected the stand by on my motor driver to ground
+        instead of voltage 🤦🏻‍♂️. After connecting the stand-by pin to 3.3V from the Arduino it started
+        functioning as expected.
+      </p>
+      <div style="width:auto; display:flex; margin:0px auto;align-items: center;justify-content: center;">
+        <iframe style="" src="https://drive.google.com/file/d/13V8xU-af1B8-aRfCsyys6-rdvIH6eTWe/preview"
+          allow="fullscreen"></iframe>
+      </div>
+
+      <p
+        style="all:unset;display:flex;margin:30px 30px 30px auto;display:flex;width:fit-content;color:rgb(92, 92, 92);font-size: 14px;user-select: none;">
+        — <i>Nima
+          Niazi</i>
+      </p>
+    </article>
+  </main>
+</body>
+
+</html>

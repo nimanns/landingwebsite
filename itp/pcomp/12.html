@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITP - Physical Computing Blog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1 class="title"><a href="/" style="color:#e1e5f2">Physcial Computing Blog
+    </a>
+  </h1>
+  <main>
+
+    <article>
+      <h2>
+        <a href="12">
+          Week 13&14 - Final Project
+        </a>
+      </h2>
+
+      <p>
+        The user testing taught me so many great things about my approach and the limitations and fallbacks of the
+        project. We received various comments on what the waves meant, and that they wanted something concrete attached
+        to them, but that's the thing with EEG sensors, that no one really knows what the readings precisely show. One
+        other feedback was that it made almost no sense to have these visuals being drawn in front of the person while
+        we requested them to close their eyes. I think the response to that would be that this whole thing can be
+        interpreted as a show for others to witness, or we can think of the visual as a reward, which will be handed at
+        the end of the session, and the process of it being drawn is just part of the backstage procedures. We had
+        really useful feedback for our project from Tom Igoe too, he suggested we could have the participant do various
+        activities and record their brainwaves to showcase the different results with different activities, which can be
+        a nice future extension of this project. He also mentioned how most of these headbands don't seem to be a
+        reliable data source and they have too much noise, which is true in my experience, the readings are far from
+        consistent, and I hoped to see more accurate readings based on the advertisements I had seen, but sadly it's not
+        the case, maybe with some advanced technology it is possible but in case of this particular headband, it's not
+        there yet. His other feedback was to design the backstage, in a way that the whole experience becomes seamless
+        for the participant, we decided to add a physcial tangible element for the person to hold and let go whenevenr
+        they wanted to initiate or abort the experience, rather than having an operator jump back and forth between the
+        lap top and them trying to initaite and stop the process, which was really distracting.
+      </p>
+      <p>
+        The physical component we added is a baby yoda doll, with neopixel lights wrapped around it, and a capacitive
+        sensor placed inside the fabrics of its clothing. There is an arduino inside the doll to which the capacitive
+        sensor and the neopixels are connected, so that it would light up and send a trigger through serial
+        communication to the sketch that it has been touched, then the process of reading and writing the EEG data
+        begins which then draws the waves on the sketch. There are two circles being drawn the outer circle is an
+        average of all the waves and the inner circle is the alpha wave. The only clear result in the user tests we had
+        was the picture below, where there is a clear contrast between the person meditating and them talking and having
+        their eyes open.
+      </p>
+      <div style="width:80%; display:grid; margin:10px auto">
+        <img src="./13/3.jpg" />
+      </div>
+      <div style="width:80%; display:grid; margin:0px auto">
+        <img src="./13/1.png" />
+      </div>
+
+      <p>The code for the whole sketch can be found <a href="https://github.com/nimanns/ICM-Final"
+          target="_blank">here</a></p>
+
+      <div style="width:80%; display:grid; margin:0px auto">
+        <img src="./13/2.jpg" />
+      </div>
+      <p>Overall it was fun to dig deeper into the EEG technology, with
+        the particular headband that I've tried I don't see higher potential than what I've already done. Maybe with
+        newer and better technology better results can be achieved.
+        But in general, the thing with anything brain-related and consciousness-related is that it is still not fully
+        understood and the whole thing is a mystery even in modern science. We have speculations and not concrete
+        evidence for most claims. </p>
+      <div style="padding:.2em .6em; width:fit-content;margin:2em auto;">
+      </div>
+
+      <div style="width:80%; display:grid; margin:0px auto">
+        <!-- <img src="./12/1.png" /> -->
+      </div>
+
+      <p
+        style="all:unset;display:flex;margin:30px 30px 30px auto;display:flex;width:fit-content;color:rgb(92, 92, 92);font-size: 14px;user-select: none;">
+        — <i>Nima
+          Niazi</i>
+      </p>
+    </article>
+  </main>
+</body>
+
+</html>

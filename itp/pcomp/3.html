@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITP - Physical Computing Blog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1 class="title"><a href="/" style="color:#e1e5f2">Physcial Computing Blog
+    </a>
+  </h1>
+  <main>
+
+    <article>
+      <h2>
+        <a href="3">
+          Week 3 - Analog Output
+        </a>
+      </h2>
+      <p>
+        The most prominent thing for me in this week's material was to wrap my head around how pulse width modulation
+        translates into analog output. I was familiar with PWM because I had worked with synthesizers before and the
+        concept of turning it into analog output is interesting. My initial guess was that the length of a pulse would
+        determine the value, but I couldn't figure out how we would get the length. The average of the on time to off
+        time would determine the value of output. I had to review it multiple times to get a grasp of what was
+        happening
+        in the process.
+      </p>
+      <p>
+        It feels like I'm dealing with the building blocks of a synthesizer. It's so fascinating to see the bare minimum
+        needed to convert an electric current into sound, I had no mental image of what was happening inside a synth or
+        an
+        electronic
+        instrument, now it makes sense and I can see how it would happen without any magic going on. I
+        imagined a sequencer in my head and tried to imitate that behaviour using code, the tone goes up in fifths (kind
+        of) and
+        when
+        it gets too high it starts from 100Hz higher than the base 440Hz, and resets once the base frequency gets
+        too high. One challenging bit for me is the period and how it relates to frequency. I think in simple words a
+        period is the time it takes for the speaker to go
+        back and forth and to
+        rest position and frequency is how many times a second that period can happen.
+      </p>
+      <!-- HTML generated using hilite.me -->
+      <div
+        style="background: #202020; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em; width:90%;margin:0 auto;">
+        <table>
+          <tr>
+            <td>
+              <pre style="color:rgb(105, 105, 105);margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre>
+            </td>
+            <td>
+              <pre style="margin: 0; line-height: 125%"><span style="color: #6ab825; font-weight: bold">float</span> <span style="color: #d0d0d0">i</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">1.5</span><span style="color: #d0d0d0">;</span>
+<span style="color: #6ab825; font-weight: bold">int</span> <span style="color: #d0d0d0">duration</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">100</span><span style="color: #d0d0d0">;</span>
+<span style="color: #6ab825; font-weight: bold">float</span> <span style="color: #d0d0d0">freq</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">440.0</span><span style="color: #d0d0d0">;</span>
+<span style="color: #6ab825; font-weight: bold">float</span> <span style="color: #d0d0d0">toneFreq</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">440.0</span><span style="color: #d0d0d0">;</span>
+
+<span style="color: #6ab825; font-weight: bold">void</span> <span style="color: #447fcf">setup</span><span style="color: #d0d0d0">()</span> <span style="color: #d0d0d0">{</span>
+<span style="color: #d0d0d0">}</span>
+
+<span style="color: #6ab825; font-weight: bold">void</span> <span style="color: #447fcf">loop</span><span style="color: #d0d0d0">()</span> <span style="color: #d0d0d0">{</span>
+  <span style="color: #d0d0d0">toneFreq</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">toneFreq*i;</span>
+
+  <span style="color: #6ab825; font-weight: bold">if</span><span style="color: #d0d0d0">(toneFreq&gt;</span><span style="color: #3677a9">10000</span><span style="color: #d0d0d0">)</span> <span style="color: #d0d0d0">{</span>
+    <span style="color: #d0d0d0">freq</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">freq</span> <span style="color: #d0d0d0">+</span> <span style="color: #3677a9">100.0</span><span style="color: #d0d0d0">;</span>
+    <span style="color: #d0d0d0">toneFreq</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">freq;</span>
+  <span style="color: #d0d0d0">}</span>
+
+  <span style="color: #6ab825; font-weight: bold">if</span><span style="color: #d0d0d0">(freq&gt;</span><span style="color: #3677a9">2000</span><span style="color: #d0d0d0">){</span> 
+    <span style="color: #d0d0d0">freq</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">440.0</span><span style="color: #d0d0d0">;</span>
+    <span style="color: #d0d0d0">toneFreq</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">freq;</span>
+  <span style="color: #d0d0d0">}</span>
+
+  <span style="color: #d0d0d0">tone(</span><span style="color: #3677a9">8</span><span style="color: #d0d0d0">,</span> <span style="color: #d0d0d0">toneFreq,</span> <span style="color: #d0d0d0">duration);</span>
+  <span style="color: #d0d0d0">delay(duration);</span>
+<span style="color: #d0d0d0">}</span>
+</pre>
+            </td>
+        </table>
+        </tr>
+      </div>
+      <div style="padding:.2em .6em; width:fit-content;margin:2em auto;">
+        <video width="100%" height="400" controls>
+          <source src="./3/2.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div style="width:40%; display:grid; margin:0px auto">
+        <img src="./3/1.gif" />
+      </div>
+      <p
+        style="all:unset;display:flex;margin:30px 30px 30px auto;display:flex;width:fit-content;color:rgb(92, 92, 92);font-size: 14px;user-select: none;">
+        — <i>Nima
+          Niazi</i>
+      </p>
+    </article>
+  </main>
+</body>
+
+</html>

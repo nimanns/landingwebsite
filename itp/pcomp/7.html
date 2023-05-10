@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITP - Physical Computing Blog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1 class="title"><a href="/" style="color:#e1e5f2">Physcial Computing Blog
+    </a>
+  </h1>
+  <main>
+
+    <article>
+      <h2>
+        <a href="7">
+          Week 7 - Serial Communication
+        </a>
+      </h2>
+      <p>
+        I had skimmed the surface of this week's material before, when I was helping another student figure out how to
+        connect
+        her slider to her p5 sketch. But I spent a little extra time fiddling around with the bare bones of serial
+        communication. I noticed when I tried to read the serial data directly with a node script and logged it to the
+        console it would get printed as a buffer object, no matter which parser I used I only received buffer objects.
+        I'm still a little confused as to why this is happening.
+      </p>
+      <p>
+        But the p5.webserial library is extremely useful and makes the whole process a lot easier. A serial
+        communication can be set up and be ready to go in seconds. I just wish my input were a little less noisy, I had
+        the idea of controlling a dot with a potentiometer.
+      </p>
+      <div style="padding:.2em .6em; width:fit-content;margin:2em auto;">
+        <video width="100%" height="400" controls>
+          <source src="./7/1.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <p>And using the serial communication the other way around was as easy. These basic building blocks can really
+        spark the imagination.</p>
+
+      <div style="padding:.2em .6em; width:fit-content;margin:2em auto;">
+        <video width="100%" height="400" controls>
+          <source src="./7/2.mp4" type="video/mp4">
+        </video>
+      </div>
+      <p
+        style="all:unset;display:flex;margin:30px 30px 30px auto;display:flex;width:fit-content;color:rgb(92, 92, 92);font-size: 14px;user-select: none;">
+        — <i>Nima
+          Niazi</i>
+      </p>
+    </article>
+  </main>
+</body>
+
+</html>

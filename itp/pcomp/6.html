@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITP - Physical Computing Blog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1 class="title"><a href="/" style="color:#e1e5f2">Physcial Computing Blog
+    </a>
+  </h1>
+  <main>
+
+    <article>
+      <h2>
+        <a href="6">
+          Week 6 - Midterm Project
+        </a>
+      </h2>
+
+      <p>
+        Me and Daniel decided to work on a spooky Theremin-like musical instrument, we used two time-of-flight sensors
+        to
+        get the user input and mapped those readings to various parameters of the sound. We started by implementing
+        simple audio synthesis using the <a href="https://sensorium.github.io/Mozzi/" target="_blank">Mozzi library</a>
+        since it had added functionality and classes compared to the built-in tone function of the Arduino Nano. Then we
+        ordered an I<sup>2</sup>C multiplexer to get a reading from both of our sensors. We noticed that the multiplexer
+        for some reason detected two I<sup>2</sup>C breakout boards on all the ports. I searched around the net and
+        found that people had similar issues, seems to be a bug in certain chips but it apparently does not affect the
+        output (<a href="https://forums.adafruit.com/viewtopic.php?f=19&t=104492" target="_blank">link to the forum
+          this was discussed</a> and screenshot of Adafruit support's message below). It took us a while to figure out a
+        proper
+        code that would get us a reading from both of the
+        sensors.
+      </p>
+
+      <div style="width:70%; display:grid; padding:1em; gap:1em;margin:0 auto">
+        <img src="./6/1.jpg" />
+      </div>
+      <div style="width:70%; display:grid; padding:1em; gap:1em;margin:0 auto">
+        <a href="./6/2.jpg" target="_blank">
+          <img src="./6/2.jpg" />
+        </a>
+      </div>
+      <p>
+        Once we could get a reading from the sensors and had the ability to switch between them, we had to figure out
+        what we wanted each sensor to do. We initially had lots of ideas in mind but then we faced the limitations of
+        the Arduino Nano and the Mozzi library. But within their abilities, we impletmented delay and filter effects.
+        Also a square wave was used to get a saturated and rich tone. One thing I noticed with our readings, was that
+        when we mapped the reading to our target range, most often we wouldn't want our input range to have a minimum of
+        zero or less
+        than 40, but the normal map function would output unreliable results once it got an input value lower than the
+        input minimum, so I wrote my own map function with a workaround:
+      </p>
+      <!-- HTML generated using hilite.me -->
+      <div
+        style="background: #202020; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em; width:80%;margin:0 auto;">
+        <table>
+          <tr>
+            <td>
+              <pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5</pre>
+            </td>
+            <td>
+              <pre style="margin: 0; line-height: 125%"><span style="color: #6ab825; font-weight: bold">float</span> <span style="color: #447fcf">_map</span><span style="color: #d0d0d0">(</span><span style="color: #6ab825; font-weight: bold">float</span> <span style="color: #d0d0d0">source,</span> <span style="color: #6ab825; font-weight: bold">float</span> <span style="color: #d0d0d0">min1,</span> <span style="color: #6ab825; font-weight: bold">float</span> <span style="color: #d0d0d0">max1,</span> <span style="color: #6ab825; font-weight: bold">float</span> <span style="color: #d0d0d0">min2,</span> <span style="color: #6ab825; font-weight: bold">float</span> <span style="color: #d0d0d0">max2)</span> <span style="color: #d0d0d0">{</span>
+  <span style="color: #d0d0d0">source</span> <span style="color: #d0d0d0">&lt;</span> <span style="color: #d0d0d0">min1</span> <span style="color: #d0d0d0">?</span> <span style="color: #d0d0d0">source</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">min1</span> <span style="color: #d0d0d0">:</span> <span style="color: #d0d0d0">source</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">source;</span>
+  <span style="color: #d0d0d0">source</span> <span style="color: #d0d0d0">&gt;</span> <span style="color: #d0d0d0">max1</span> <span style="color: #d0d0d0">?</span> <span style="color: #d0d0d0">source</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">max1</span> <span style="color: #d0d0d0">:</span> <span style="color: #d0d0d0">source</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">source;</span>
+  <span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #d0d0d0">(source</span> <span style="color: #d0d0d0">-</span> <span style="color: #d0d0d0">min1)</span> <span style="color: #d0d0d0">/</span> <span style="color: #d0d0d0">(max1</span> <span style="color: #d0d0d0">-</span> <span style="color: #d0d0d0">min1)</span> <span style="color: #d0d0d0">*</span> <span style="color: #d0d0d0">(max2</span> <span style="color: #d0d0d0">-</span> <span style="color: #d0d0d0">min2)</span> <span style="color: #d0d0d0">+</span> <span style="color: #d0d0d0">min2;</span>
+<span style="color: #d0d0d0">}</span>
+</pre>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div style="padding:.2em .6em; width:fit-content;margin:2em auto;">
+        <video width="100%" height="400" controls>
+          <source src="./6/2.mp4" type="video/mp4">
+        </video>
+      </div>
+      <p>
+        Then we added a switch to control between several
+        states, everytime the switch is pressed the state changes and once it reaches the 4th state it loops back to the
+        first one. The first state uses an EventDelay which is equivalent to the normal delay in Arduino's library.
+        Within the delayed period, we can hear a pitch drop. One of the sensors changes the interval between event
+        delays
+        and the other one changes the initial beginning pitch. The second one was our attempt at creating a scale and
+        mapping the reading of our sensors to the notes within that scale. I personally expected a more defined pitch
+        generation but I guess the Arduino Nano 33 IoT's hardware is not ideal for sound synthesis. Still we could get
+        some interesting chiptune-like effects. The third state implements a lowpass filter, one sensor changes the
+        notes on a scale and the other controls the cutoff frequency of our filter. The fourth state is a feedback
+        delay, but as mentioned in the reference of the mozzi library the range of the delaytime is between 0 and 7
+        milliseconds, which is hardly noticeable to the human ear. Once the delaytime is below 20ms even if technically
+        it is a delay, most often it is referred to as a chorus or a modulation effect.
+      </p>
+
+      <div style="padding:.2em .6em; width:fit-content;margin:2em auto;">
+        <video width="100%" height="400" controls>
+          <source src="./6/3.mp4" type="video/mp4">
+        </video>
+      </div>
+      <p>
+        This project in my opinion was a great introduction to sound synthesis and sound manipulation using the bare
+        minimum. It was a challenge to be stripped off of all the musical advancements that we take for granted and work
+        with a voltage and a speaker and a microcontroller. The limitations of the Arduino Nano definitely changed the
+        course of our project development. The delay is not at all what one would expect from a delay effect but given
+        the
+        limited memory, it's not possible to have a long delay buffer and hence we had to work with what we
+        had. Despite all the frustrations with things not working as we expected, I had lots of fun and eureka moments
+        throughout the development of this project.
+      </p>
+      <p
+        style="all:unset;display:flex;margin:30px 30px 30px auto;display:flex;width:fit-content;color:rgb(92, 92, 92);font-size: 14px;user-select: none;">
+        — <i>Nima
+          Niazi</i>
+      </p>
+    </article>
+  </main>
+</body>
+
+</html>

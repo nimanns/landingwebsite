@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITP - Physical Computing Blog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1 class="title"><a href="/" style="color:#e1e5f2">Physcial Computing Blog
+    </a>
+  </h1>
+  <main>
+
+    <article>
+      <h2>
+        <a href="8">
+          Week 8 - Serial Communication pt. 2
+        </a>
+      </h2>
+      <p>
+        Continuing with the serial communication, I tried to dive deeper and instead of using the p5webserial, I used
+        the serialport node library and set up a WebSocket server so that the client side could connect and read the
+        emitted data from the server side. I used the acceleration sensors within the Arduino and wrote the incoming
+        values as a comma-separated string into the serial output. Inside the server-side file, I used the <a
+          href="https://serialport.io/docs/api-parser-readline" target="_blank">
+          ReadlineParser
+        </a> to get a new reading every time the parser comes across a newline character. In the client side I still got
+        the
+        previously mentioned buffer object with hex values, I thought maybe passing it to the String() constructor would
+        make it a string and it did! So finally I was able to get a proper reading on the client side using the
+        serialport library and a websocket connection, I assigned the sensor values to control the rotation of a cube as
+        a simple demonstration of what kind of reading I'm getting. I'm sure there are lots of creative applications
+        that can stem from this simple reading.
+      </p>
+      <div style="padding:.2em .6em; width:fit-content;margin:2em auto;">
+        <video width="100%" height="400" controls>
+          <source src="./8/1.mp4" type="video/mp4">
+        </video>
+      </div>
+      <!-- HTML generated using hilite.me -->
+      <div
+        style="background: #202020; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em; width:90%;margin:0 auto;">
+        <table>
+          <tr>
+            <td>
+              <pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5
+6</pre>
+            </td>
+            <td>
+              <pre style="margin: 0; line-height: 125%"><span style="color: #6ab825; font-weight: bold">const</span> <span style="color: #d0d0d0">socket</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #d0d0d0">WebSocket(</span><span style="color: #ed9d13">&quot;ws://localhost:8081&quot;</span><span style="color: #d0d0d0">);</span>
+<span style="color: #6ab825; font-weight: bold">let</span> <span style="color: #d0d0d0">arr;</span>
+<span style="color: #d0d0d0">socket.addEventListener(</span><span style="color: #ed9d13">&quot;open&quot;</span><span style="color: #d0d0d0">,</span> <span style="color: #d0d0d0">(event)</span> <span style="color: #d0d0d0">=&gt;</span> <span style="color: #d0d0d0">{});</span>
+<span style="color: #d0d0d0">socket.addEventListener(</span><span style="color: #ed9d13">&quot;message&quot;</span><span style="color: #d0d0d0">,</span> <span style="color: #d0d0d0">(event)</span> <span style="color: #d0d0d0">=&gt;</span> <span style="color: #d0d0d0">{</span>
+  <span style="color: #d0d0d0">arr</span> <span style="color: #d0d0d0">=</span> <span style="color: #24909d">String</span><span style="color: #d0d0d0">(event.data).split(</span><span style="color: #ed9d13">&quot;,&quot;</span><span style="color: #d0d0d0">);</span>
+<span style="color: #d0d0d0">});</span>
+</pre>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <p
+        style="all:unset;display:flex;margin:30px 30px 30px auto;display:flex;width:fit-content;color:rgb(92, 92, 92);font-size: 14px;user-select: none;">
+        — <i>Nima
+          Niazi</i>
+      </p>
+    </article>
+  </main>
+</body>
+
+</html>

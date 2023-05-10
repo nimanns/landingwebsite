@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITP - Physical Computing Blog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1 class="title"><a href="/" style="color:#e1e5f2">Physcial Computing Blog
+    </a>
+  </h1>
+  <main>
+
+    <article>
+      <h2>
+        <a href="2">
+          Week 2 - Working with Arduino
+        </a>
+      </h2>
+      <p>
+        This week's activities consisted of first interactions with the Arduino interface and working with some
+        programming concepts. Since I have a programming background I could get through the basic concepts easily but
+        the hardware side of the story is all new and somewhat challenging. Terms like activity boards and development
+        boards the distinction between them or how microcontrollers differ from processors and so on.
+        As I understand the bootloader on Arduino is used to change the program or shift the bits into the memory and it
+        is then capable of running that program whenever it is powered on.
+      </p>
+      <p>
+        After reviewing the pins and their functions on the Arduino 33 IoT, I started the labs and using the
+        pins I was able to make digital and analog inputs control an LED's behavior. The potentiometer was a bit loose
+        so I had to keep it in place with my finger to make the circuit function properly otherwise it would just stay
+        on and would not behave according to the state of resistance.
+      </p>
+      <div style="width:40%; display:grid; padding:1em; gap:1em; margin:0px auto">
+        <img src="./2/2.gif" />
+      </div>
+      <p>
+        The distinction between analog and digital I/O is still a bit foggy to me, I have to look into how they
+        differ exactly, but for now I can see that a digital I/O only has two states, true or false, and an analog I/O
+        has rising
+        and falling and peak states, it's a spectrum rather than a switch. And as I understand the analog behavior is
+        achieved by pulse width modulation on the Arduino 33 IoT.
+        I hooked up an FSR and printed the value returned by the sensor into the Serial Plotter, it seems to be a rather
+        noisy input, or maybe it's just normal behavior.
+      </p>
+
+      <div style="width:40%; display:grid; padding:1em; gap:1em; margin:0px auto">
+        <img src="./2/1.gif" />
+      </div>
+
+      <p>
+        Then I used this input to control an LED, I first read the value using analogRead(), mapped the value received
+        by the sensor into a range of 0 - 255 to
+        control the brightness of the LED and wrote the value using analogWrite() through pin 11.
+      </p>
+      <!-- HTML generated using hilite.me -->
+      <div
+        style="background: #202020; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em; width:90%;margin:0 auto;">
+
+        <pre style="margin: 0; line-height: 125%"><span style="color: #6ab825; font-weight: bold">void</span> <span style="color: #447fcf">loop</span><span style="color: #d0d0d0">()</span> <span style="color: #d0d0d0">{</span>
+  <span style="color: #6ab825; font-weight: bold">int</span> <span style="color: #d0d0d0">sensorValue</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">analogRead(A0);</span>
+  <span style="color: #6ab825; font-weight: bold">int</span> <span style="color: #d0d0d0">mappedValue</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">map(sensorValue,</span><span style="color: #3677a9">0</span><span style="color: #d0d0d0">,</span><span style="color: #3677a9">1000</span><span style="color: #d0d0d0">,</span><span style="color: #3677a9">0</span><span style="color: #d0d0d0">,</span><span style="color: #3677a9">255</span><span style="color: #d0d0d0">);</span>
+  <span style="color: #d0d0d0">Serial.println(mappedValue);</span>
+  <span style="color: #d0d0d0">analogWrite(</span><span style="color: #3677a9">11</span><span style="color: #d0d0d0">,mappedValue);</span>
+<span style="color: #d0d0d0">}</span>
+</pre>
+      </div>
+      <div style="width:80%; display:grid; padding:1em; gap:1em; margin:0px auto">
+        <img src="./2/3.gif" />
+      </div>
+      <p>
+        There are lots of possibilities now that I can access the physical domain in a programming environment, as fun
+        as it sounds it also can be a challenge to figure out what can be done using this interface, I'm excited to
+        explore more. Maybe I can introduce a speaker and do some sound synthesis.
+      </p>
+      <p
+        style="all:unset;display:flex;margin:30px 30px 30px auto;display:flex;width:fit-content;color:rgb(92, 92, 92);font-size: 14px;user-select: none;">
+        — <i>Nima
+          Niazi</i>
+      </p>
+    </article>
+  </main>
+</body>
+
+</html>

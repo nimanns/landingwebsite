@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITP - Physical Computing Blog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1 class="title"><a href="/" style="color:#e1e5f2">Physcial Computing Blog
+    </a>
+  </h1>
+  <main>
+
+    <article>
+      <h2>
+        <a href="10">
+          Week 10 - Final Project/Change of Plan
+        </a>
+      </h2>
+      <p>
+        As of last week, things have changed in terms of my final project. I was asked by my friend Andrianna to join
+        her project with Zey which is about meditation and using the Muse 2 headband to measure the state of mind during
+        a meditation session and capturing the input into a meaningful souvenir, and since I loved the idea, I
+        decided to join them and help them mostly with the technical side and as the programmer. I can also see how my
+        inital idea can fit here, my idea was to turn ratios into polyrhythms, but ratios can also exist as colors, or
+        shapes, we were discussing how we could also incorporate the ratio concept inside our final piece that we want
+        to give to our participant. We spent one evening talking about the plan, tryin to come up with a system diagram.
+        We decided to stick to making the MVP as soon as possible, and then add whatever else we may need to further
+        expand the capabalities.
+      </p>
+      <div style="display: grid; grid-template-columns:1fr 1fr; margin: 2em auto; gap:1em; width: 70%;">
+        <a href="/10/1.jpg" target="_blank">
+          <img src="/10/1.jpg" alt="A system diagram for our project.">
+        </a>
+        <a href="/10/2.jpg" target="_blank">
+          <img src="/10/2.jpg" alt="A system diagram for our project.">
+        </a>
+        <a style="grid-column:1/3 ;" href="/10/3.jpg" target="_blank">
+          <img src="/10/3.jpg" alt="A system diagram for our project.">
+        </a>
+        <a style="grid-column: 1/3;" href="/10/4.jpg" target="_blank">
+          <img src="/10/4.jpg" alt="A system diagram for our project.">
+        </a>
+      </div>
+      <p>
+        The first step towards an MVP, is getting the Muse headband talk to the computer. I used the Web Bluetooth API
+        approach becuase it seemed more straightforward. The below script is successfully getting the EEG data from the
+        headband and logging it to the console. We are getting many variables and numbers from the device, we need
+        to
+        find out a way to average them or make sense of them so that it is meaningful to us.
+      </p>
+      <!-- HTML generated using hilite.me -->
+      <div
+        style="background: #202020; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em; width:80%; margin:0 auto">
+        <table>
+          <tr>
+            <td>
+              <pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre>
+            </td>
+            <td>
+              <pre style="margin: 0; line-height: 125%"><span style="color: #6ab825; font-weight: bold">import</span> <span style="color: #d0d0d0">{</span> <span style="color: #d0d0d0">MuseClient</span> <span style="color: #d0d0d0">}</span> <span style="color: #d0d0d0">from</span> <span style="color: #ed9d13">&quot;muse-js&quot;</span><span style="color: #d0d0d0">;</span>
+
+<span style="color: #6ab825; font-weight: bold">const</span> <span style="color: #d0d0d0">muse</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #d0d0d0">MuseClient();</span>
+
+<span style="color: #d0d0d0">async</span> <span style="color: #6ab825; font-weight: bold">function</span> <span style="color: #d0d0d0">connectToMuse()</span> <span style="color: #d0d0d0">{</span>
+  <span style="color: #d0d0d0">await</span> <span style="color: #d0d0d0">muse.connect();</span>
+  <span style="color: #d0d0d0">await</span> <span style="color: #d0d0d0">muse.start();</span>
+  <span style="color: #d0d0d0">muse.eegReadings.subscribe((val)</span> <span style="color: #d0d0d0">=&gt;</span> <span style="color: #d0d0d0">{</span>
+    <span style="color: #d0d0d0">console.log(val);</span>
+  <span style="color: #d0d0d0">});</span>
+<span style="color: #d0d0d0">}</span>
+</pre>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <p
+        style="all:unset;display:flex;margin:30px 30px 30px auto;display:flex;width:fit-content;color:rgb(92, 92, 92);font-size: 14px;user-select: none;">
+        — <i>Nima
+          Niazi</i>
+      </p>
+    </article>
+  </main>
+</body>
+
+</html>

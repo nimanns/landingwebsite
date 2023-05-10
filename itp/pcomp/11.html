@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITP - Physical Computing Blog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1 class="title"><a href="/" style="color:#e1e5f2">Physcial Computing Blog
+    </a>
+  </h1>
+  <main>
+
+    <article>
+      <h2>
+        <a href="11">
+          Week 11&12 - Final Project progress & play/user testing
+        </a>
+      </h2>
+
+      <p>The past two weeks the three of us (Andi, Zey and me) have been busy making progress and fleshing out our final
+        project. It has come to a good point by now, but things still need to be cleaned out and some final touches are
+        still missing. Previous week we had the chance to play test, people were interested in the general idea. One
+        person suggested that it would be great to have more context as to what's happening in the visuals. We've
+        discussed this in detail but the truth is the headband is at best capable of registering brain stimulation, so
+        there's not much context we can give. This is a wave reading of the brain that goes through an FFT process and
+        then we get different values each corresponding to different states of mind, but they seem more speculations
+        than factual data. All we know is that the brain was stimulated or not. Also as we have seen with the various
+        tests, there is noise involved too, so this project in my opinion is more an artistic capture of the
+        participator's brain activity in a moment in time. The
+        visuals came out acceptable, given that it's generated live with code. There has been many iterations since the
+        first version seen below;</p>
+      <div style="width:80%; display:grid; margin:0px auto">
+        <img src="./12/2.jpeg" />
+      </div>
+      <p>There were lots of challenges we faced along the way, particularly with the code, some are still there, like
+        calculating the circular shape and starting and stopping it in a way that would fit our 9-minute piece. Also
+        figuring out the actual raw EEG reading and performing an FFT on it was also something new, I have worked with
+        FFT before but for sound. Thanks to Jason Snell, who provided us with <a
+          href="https://openprocessing.org/sketch/1748494" target="_blank">this code </a> and so we
+        could implement the same logic on our project. We have
+        a 9-minute piece which is made by stiching sounds from various frequencies together, with a bit of music in the
+        beginning and the end, to guide the participator in and out of the experience as smoothly as possible. One other
+        thing that we want to add is different color palettes, we want each graphic to be different than the other one,
+        a unique sketch for each participant. We also want to add their names to the graphic, render it as an image and
+        upload it on a web server. The initial plan was to print it but printers for arduino are not capable of handling
+        color and this much complexity, so we abandoned that idea.</p>
+      <div style="width:80%; display:grid; margin:0px auto">
+        <img src="./12/3.jpg" />
+      </div>
+      <p>We can also control a light strip with the readings, we have not decided how to showcase the values as light
+        yet, the plan was to play with brightness of just plain white LEDs to avoid distraction, but the strip is not
+        capable of changing brightness smoothly, it flickers and it's still distracting. We currently have two modes one
+        with values mapped to different RGB values to achieve color changes, one with plain white LED changing
+        brightness</p>
+      <div style="padding:.2em .6em; width:fit-content;margin:2em auto;">
+        <video width="100%" height="400" controls>
+          <source src="./12/4.mp4" type="video/mp4">
+        </video>
+      </div>
+      <p>One thing that was mentioned during Andrianna's user testing class, was that the visuals kept going even when
+        the headband was off! So I went into the code and after some debugging, figured out that the array for EEG
+        values in fact was
+        being filled faster than the visual could be drawn, so the waves were always lagging behind the actual current
+        reading of the muse, it had to do with a weird for loop that I had created for
+        drawing the waves around the iris, so instead I made them the same speed, now when the headband is off, it just
+        keeps repeating the last readings and won't change, which shows that the drawing is in fact real-time;</p>
+      <div style="width:80%; display:grid; margin:0px auto">
+        <img src="./12/1.png" />
+      </div>
+      <p>Of course, the final plan is to stop drawing altogether whenever the headband is off. And also stop when it
+        wraps around and finishes the circle. Currently it just keeps going forever and ever. I'm excited to showcase
+        our project in tomorrow's user testing class and receive feedback on how we can improve the experience.</p>
+      <p
+        style="all:unset;display:flex;margin:30px 30px 30px auto;display:flex;width:fit-content;color:rgb(92, 92, 92);font-size: 14px;user-select: none;">
+        — <i>Nima
+          Niazi</i>
+      </p>
+    </article>
+  </main>
+</body>
+
+</html>
