@@ -48,3 +48,15 @@ iframe {
   color: white;
   background: rgb(58, 58, 58);
 }
+
+div#footer {
+  text-align: center;
+  font-size: 0.8em;
+  color: #ccc;
+  padding: 1em;
+  /* stick to the bottom of the page */
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
