@@ -1,11 +1,16 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@500&display=swap"); */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap");
 
+html {
+  min-height: 100%;
+}
+
 body {
   margin: 0;
   background-color: #3786d1;
   font-family: "Noto Sans Mono", monospace;
   font-size: 22px;
+  min-height: 100%;
 }
 
 div#main {

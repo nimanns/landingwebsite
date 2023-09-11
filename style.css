@@ -195,7 +195,7 @@ div.intro h1.title {
   padding: 0;
   line-height: 1.4em;
   -webkit-animation: fadeFromLeft 1s ease forwards;
-          animation: fadeFromLeft 1s ease forwards;
+  animation: fadeFromLeft 1s ease forwards;
   opacity: 0;
 }
 div.intro h3 {
@@ -204,7 +204,7 @@ div.intro h3 {
 }
 div.intro h3.one {
   -webkit-animation: fadeFromLeft 1s 0.5s ease forwards;
-          animation: fadeFromLeft 1s 0.5s ease forwards;
+  animation: fadeFromLeft 1s 0.5s ease forwards;
   opacity: 0;
   margin: auto 0 0 0;
 }
@@ -212,7 +212,7 @@ div.intro h3.two {
   margin: 0.5em 0 auto 0;
   opacity: 0;
   -webkit-animation: fadeFromLeft 1s 1s ease forwards;
-          animation: fadeFromLeft 1s 1s ease forwards;
+  animation: fadeFromLeft 1s 1s ease forwards;
 }
 
 div {
@@ -232,9 +232,9 @@ div[data-section] {
 }
 div[data-section] h1 {
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   pointer-events: none;
 }
 div[data-section] div.content {
@@ -286,13 +286,34 @@ div.change-theme div:hover {
   filter: brightness(1.2);
 }
 div.change-theme div#first {
-  background: linear-gradient(130deg, #540d6e 0%, #ee4266 40%, #ffd23f 50%, #3bceac 75%, #0ead69 100%);
+  background: linear-gradient(
+    130deg,
+    #540d6e 0%,
+    #ee4266 40%,
+    #ffd23f 50%,
+    #3bceac 75%,
+    #0ead69 100%
+  );
 }
 div.change-theme div#second {
-  background: linear-gradient(130deg, #495d63 0%, #629677 20%, #98b6b1 50%, #d7bcc8 75%, #fac8cd 100%);
+  background: linear-gradient(
+    130deg,
+    #495d63 0%,
+    #629677 20%,
+    #98b6b1 50%,
+    #d7bcc8 75%,
+    #fac8cd 100%
+  );
 }
 div.change-theme div#third {
-  background: linear-gradient(130deg, #f72585 0%, #b5179e 20%, #7209b7 50%, #560bad 75%, #3a0ca3 100%);
+  background: linear-gradient(
+    130deg,
+    #f72585 0%,
+    #b5179e 20%,
+    #7209b7 50%,
+    #560bad 75%,
+    #3a0ca3 100%
+  );
 }
 
 div.accordion {
@@ -308,15 +329,15 @@ div.accordion div {
 }
 div.accordion div.animate-uno {
   -webkit-animation: anima2 0.3s ease-in-out forwards;
-          animation: anima2 0.3s ease-in-out forwards;
+  animation: anima2 0.3s ease-in-out forwards;
 }
 div.accordion div.animate-dos {
   -webkit-animation: anima2 0.2s ease-in-out forwards;
-          animation: anima2 0.2s ease-in-out forwards;
+  animation: anima2 0.2s ease-in-out forwards;
 }
 div.accordion div.animate-tres {
   -webkit-animation: anima2 0.1s ease-in-out forwards;
-          animation: anima2 0.1s ease-in-out forwards;
+  animation: anima2 0.1s ease-in-out forwards;
 }
 
 div#one {
@@ -363,17 +384,17 @@ div.fouralt {
 
 div[data-section] > div.accordion > div.animate2-uno {
   -webkit-animation: anima2rev 0.3s ease-in-out forwards;
-          animation: anima2rev 0.3s ease-in-out forwards;
+  animation: anima2rev 0.3s ease-in-out forwards;
 }
 
 div[data-section] > div.accordion > div.animate2-dos {
   -webkit-animation: anima2rev 0.2s ease-in-out forwards;
-          animation: anima2rev 0.2s ease-in-out forwards;
+  animation: anima2rev 0.2s ease-in-out forwards;
 }
 
 div[data-section] > div.accordion > div.animate2-tres {
   -webkit-animation: anima2rev 100ms ease-in-out forwards;
-          animation: anima2rev 100ms ease-in-out forwards;
+  animation: anima2rev 100ms ease-in-out forwards;
 }
 
 div.card {
@@ -418,17 +439,17 @@ div#image-wrapper button#close-btn {
   height: 50px;
   text-align: center;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   cursor: pointer;
 }
 div#image-wrapper button.navigator {
   all: unset;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   margin: 1em;
   background-color: rgba(255, 255, 255, 0.274);
   padding: 0.4em;
@@ -445,20 +466,20 @@ div#image-wrapper button#next-btn {
   position: absolute;
   right: 0;
   -webkit-animation: nextAnima 2s cubic-bezier(0.23, 1, 0.32, 1);
-          animation: nextAnima 2s cubic-bezier(0.23, 1, 0.32, 1);
+  animation: nextAnima 2s cubic-bezier(0.23, 1, 0.32, 1);
 }
 div#image-wrapper button#prev-btn {
   position: absolute;
   left: 0;
   -webkit-animation: prevAnima 2s cubic-bezier(0.23, 1, 0.32, 1);
-          animation: prevAnima 2s cubic-bezier(0.23, 1, 0.32, 1);
+  animation: prevAnima 2s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 img.modal-image {
   display: flex;
   width: 100%;
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 div.modal {
@@ -528,14 +549,14 @@ div.close-btn {
     background-color: #a1a1a1;
     transform: rotateX(90deg);
     -webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
-            clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
   }
   to {
     background-color: var(--bg);
     transform: rotateX(0deg);
     height: 120px;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 101%, 0 101%);
-            clip-path: polygon(0 0, 100% 0, 100% 101%, 0 101%);
+    clip-path: polygon(0 0, 100% 0, 100% 101%, 0 101%);
   }
 }
 @keyframes anima2 {
@@ -543,14 +564,14 @@ div.close-btn {
     background-color: #a1a1a1;
     transform: rotateX(90deg);
     -webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
-            clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
   }
   to {
     background-color: var(--bg);
     transform: rotateX(0deg);
     height: 120px;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 101%, 0 101%);
-            clip-path: polygon(0 0, 100% 0, 100% 101%, 0 101%);
+    clip-path: polygon(0 0, 100% 0, 100% 101%, 0 101%);
   }
 }
 @-webkit-keyframes anima2rev {
@@ -559,7 +580,7 @@ div.close-btn {
     transform: rotateX(0deg);
     height: 120px;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 101%, 0 101%);
-            clip-path: polygon(0 0, 100% 0, 100% 101%, 0 101%);
+    clip-path: polygon(0 0, 100% 0, 100% 101%, 0 101%);
     opacity: 1;
   }
   20% {
@@ -567,14 +588,14 @@ div.close-btn {
     transform: rotateX(30deg);
     height: 120px;
     -webkit-clip-path: polygon(0 0, 100% 0, 98% 100%, 2% 100%);
-            clip-path: polygon(0 0, 100% 0, 98% 100%, 2% 100%);
+    clip-path: polygon(0 0, 100% 0, 98% 100%, 2% 100%);
     opacity: 1;
   }
   100% {
     background-color: #a1a1a1;
     transform: rotateX(90deg);
     -webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
-            clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
     opacity: 1;
   }
 }
@@ -584,7 +605,7 @@ div.close-btn {
     transform: rotateX(0deg);
     height: 120px;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 101%, 0 101%);
-            clip-path: polygon(0 0, 100% 0, 100% 101%, 0 101%);
+    clip-path: polygon(0 0, 100% 0, 100% 101%, 0 101%);
     opacity: 1;
   }
   20% {
@@ -592,14 +613,14 @@ div.close-btn {
     transform: rotateX(30deg);
     height: 120px;
     -webkit-clip-path: polygon(0 0, 100% 0, 98% 100%, 2% 100%);
-            clip-path: polygon(0 0, 100% 0, 98% 100%, 2% 100%);
+    clip-path: polygon(0 0, 100% 0, 98% 100%, 2% 100%);
     opacity: 1;
   }
   100% {
     background-color: #a1a1a1;
     transform: rotateX(90deg);
     -webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
-            clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
     opacity: 1;
   }
 }
@@ -665,4 +686,4 @@ div#about-me-image {
   div.intro h3 {
     font-size: 17px;
   }
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */
