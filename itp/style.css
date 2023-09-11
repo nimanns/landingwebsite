@@ -11,6 +11,7 @@ body {
   font-family: "Noto Sans Mono", monospace;
   font-size: 22px;
   min-height: 100%;
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
 div#main {
