@@ -20,8 +20,10 @@
       margin: 1em 0;
       width: 10px;
       min-height: 100%;
-      background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
       animation: blinking-cursor 1.5s forwards ease;
+      background-image: linear-gradient(to bottom, #5f5f5f 0%, black 100%);
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+
     }
 
     @keyframes typewriter {
@@ -76,11 +78,10 @@
 
 <body>
   <div id="main">
-    <!-- <div style="width: fit-content; display: flex; flex-direction: row;">
+    <div style="width: fit-content; display: flex; flex-direction: row;">
       <h1 id="mimi"><a href="/itp">ITP Blog</a></h1>
       <div id="rainbow"></div>
-    </div> -->
-    <h1><a href="/itp">ITP Blog</a></h1>
+    </div>
     <h2><a href="/itp/absurd/">Designing the Absurd</a></h2>
     <h2><a href="/itp/energy/">Energy</a></h2>
     <h2><a href="/itp/light/">Light and Interactivity</a></h2>
