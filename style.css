@@ -41,6 +41,20 @@ div.max-width-twelve-hundred {
   max-width: 1200px !important;
 }
 
+div#itp {
+  width: fit-content;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 0.1em 0.5em;
+  border-radius: 5px;
+  font-size: 30px;
+  text-decoration: none;
+  color: #3f3f3f;
+}
+
+/* a cool looking sleek a link */
+
 body[data-first] {
   --cc: white;
 }
