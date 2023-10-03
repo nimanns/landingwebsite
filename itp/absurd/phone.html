@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITP Blog - Designing the Absurd</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="main">
+    <h1><a href="/itp">ITP Blog</a></h1>
+    <h2><a href="/itp/absurd/">Designing the Absurd</a></h2>
+    <h3>
+      Phone Add-on Project
+    </h3>
+    <p>After brainstorming and thinking about the many ideas we had, we decided to move forward with the phone stand
+      one, that has LEDs that will notify the user upon receiving a notification. In terms of how the user will be
+      notified, binary values of the ascii characters of the message is an option. The other option is morse code. But
+      both would require the user to know how to read binary on the spot, which I would imagine is a rare thing. Morse
+      code would probably be easier. As of now my plan is to include both in some way.</p>
+    <h4>The Thought Process</h4>
+    <p>
+      Initially, I wanted to do something with the notifications. I thought it would be cool to have a phone stand that
+      could react in some way to the notifications received. The initial idea was that the stand reads the notifications
+      because it's a convenience to have your notifications read while you're doing other stuff. But then that would
+      raise privacy issues. I remembered a product I had seen before, this idea of a <a
+        href="https://en.wikipedia.org/wiki/Binary_clock" target="_blank">binary clock</a>. I thought it would be cool
+      to implement a binary representation of the message received. Although I don't think it's very practical to learn
+      reading binary to understand your messages, but it is indeed possible if one has enough dedication.
+    </p>
+    <h4>Technical Stuff</h4>
+    <p>Working with Android Studio to read the notifications and sending them through serial monitor was quite
+      straightforward. Although most of the code I found online was already deprecated, but that seems to be the nature
+      of Android development.</p>
+    <p>I found an 8-bit neopixel strip. I coded an arduino to receive the serial message from the phone once it's
+      available and go through each character in a loop and light up the 8-bit LED strip according to the binary
+      representation of that character's ascii number.</p>
+
+    <h4>Fabrication</h4>
+    <p>As a developer, the coding part is usually what I find the easiest, and the enclosure and the fabrication is
+      usually the hardest step for me. I started experimenting in Fusion360 with different ideas I had for a phone
+      stand, below are two of them:</p>
+    <iframe src="https://drive.google.com/file/d/1eV8QI5ptL2YGDvAVmAHlSjzxHwO1xT0z/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <iframe src="https://drive.google.com/file/d/1WMYJThYD8Id7F8qGX7NWqEQLkKCKl4mE/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <p>Given the timeframe we had, I decided to go with a more practical idea. ALthough I want to learn to design and
+      make better enclosures and boxes that don't look like a student project, I needed to take one step at a time. I
+      didn't want to use a website to generate templates. So I started 3D modeling what I had in mind. I first started
+      by modeling a small piece to hold the USB connector in place, I measured and experimented with a few prints to
+      achieve one that was a snug fit.</p>
+    <iframe src="https://drive.google.com/file/d/10wtnhN7uAgLMP-FxTGK5BJVakNl3ZyhM/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <iframe src="https://drive.google.com/file/d/1fo0VAQ0bR1oMAsjjHHVoVQA4rgmtUBvI/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <p>The rest of the box, I made a simple rectangular cube, as much as I hate the joints on it, it was the most
+      practical option. I will for sure redesign this sometime in the future without those joints.</p>
+    <iframe src="https://drive.google.com/file/d/1OmoJrbr0u5KiPVGYjCs_B-WQoYxRMjHn/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <p>I also made this back support for the phone to hold it in place.</p>
+    <iframe src="https://drive.google.com/file/d/1PhPyJbY2MsAb5k3qhdLxVEj_LQSXdPEY/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <p>Next step was to make cardboard prototypes:</p>
+    <iframe src="https://drive.google.com/file/d/1fKHWt-6XYE5d6KYvCKaUNSx2LUT3SiTi/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <iframe src="https://drive.google.com/file/d/1fgrL1sAA_leqkq-YlfK7OTvGjvnEH7yV/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <iframe src="https://drive.google.com/file/d/1fleVJIBZ471E2Qj3JGrijwCxG6EAAmdo/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <p>After trying to plug my phone in with this prototype it was clear that it was too tight for any phone with a
+      case, I resized the box to have a better fit. </p>
+    <iframe src="https://drive.google.com/file/d/1flAiEoAW1MMFeLE00_Ay4w7vVDOZS8Q_/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <p>After making a couple more prototypes, we cut it on acrylic and glued them together. We intentionally chose neon
+      bright reflective colors to have a certain aesthetic. We made two versions of it with corresponding neopixel
+      colors.</p>
+    <p>___Photos to be added soon___</p>
+    <p>This product comes with an app that you need to have in order to connect to it, you can also control whether you
+      want it to show you binary or morse code.</p>
+    <iframe src="https://drive.google.com/file/d/1Pw5A_EvvlZrWKo3GRBoGEy4trj4VLq_B/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <p></p>
+    <i>Classmates' evaluation of our project.</i>
+    <iframe src="https://drive.google.com/file/d/1fcn6IKzcalAoJS5KgiKoESMe4sfNJbwG/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <div style="min-height: 200px;"></div>
+
+  </div>
+</body>
+
+</html>
