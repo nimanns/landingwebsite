@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITP Blog - Designing the Absurd</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    iframe {
+      margin-top: 2em;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="main">
+    <h1><a href="/itp">ITP Blog</a></h1>
+    <h2><a href="/itp/absurd/">Designing the Absurd</a></h2>
+    <h3>
+      Absurd Hotel
+    </h3>
+    <h4 style="background-color: #FFFF00;">Ideation</h4>
+    <p>The ideation process for this one took the longest. We had many ideas but none of them seemed to be useful or
+      unuseless enough to be presentable in this hotel. Our very first ideas were:</p>
+    <ul>
+      <li>An overhead light for bed that has sliding sides so that the user can close one side and have light on the
+        other side only while reading at night.</li>
+      <li>A contraption attached to a bedside lamp that's protruding and can be used to concentrate light in one point.
+      </li>
+      <li>An overhead curtain on your bed's headboard so that you can slide into and have privacy while being in the
+        same space with your partner. <i style="background-color: aquamarine; font-size: 16px; padding: .5em;">(We went
+          really crazy
+          with
+          this one and started imagining a whole installation
+          of
+          a huge curtain that the user can slide around and have privacy in different spots in the room, with a light
+          inside and a fabric that's breathable, we even did some research on how to find the right material for it but
+          upon having a meeting with our instructor we decided to let go of the idea because it wasn't serving the
+          purpose
+          of the assignment and also not very practical to make in a week.)</i></li>
+      <li>
+        An ashtray that's designed for rooms that are non-smoking, it has a mechanism that sucks the cigarette in and/or
+        cuts it in half when you put it in the ashtray.<i
+          style="background-color: rgb(205, 255, 240); font-size: 16px; padding: .5em;"> (We thought this idea was too
+          specific and not very useful.)</i>
+      </li>
+      <li>
+        A modified chopstick set that is presented to you by the waiter, you can choose your weapon depending on the
+        dish and your mood, there are different types of chopsticks, some have containers up at the top for salt,
+        pepper, one has a container and a special design to dispense soy sauce, one has a tiny little grinder for
+        grinding spices, etc.<i style="background-color:blanchedalmond; font-size: 16px; padding: .5em;">
+          Upon further thinking we thought that this idea wasn't really solving a problem. Although
+          it was one of my favorite ideas that we had out of all of our ideas.</i>
+      </li>
+      <li><strong>Chosen Idea:</strong><span style="background-color:#FFFF00;">
+          A sleep mask that's an alarm for you to wake up without bothering other people
+          in
+          the room. The sleep mask has
+          a curtain that covers the front, which will roll up when it's time to wake up, it also has vibrating modules
+          placed around it so that you actually wake up via the haptic feedback. It is paired with your phone for ease
+          of
+          use.</span></li>
+    </ul>
+    <iframe src="https://drive.google.com/file/d/13AMa6JWgtVvqXsfRh01ijUBiA3TKK4h_/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <i>The privacy cone, attachable to the bed headboard or as a light fixture</i>
+    <iframe src="https://drive.google.com/file/d/1G6p61cbAF1IaiFyemK34W68FD2_d4TE0/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <i>The useless ashtray, that destroys your cigarette</i>
+    <iframe src="https://drive.google.com/file/d/1ztQMI6LezeQW0AXV8jEVnXRWinVW4xdp/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <iframe src="https://drive.google.com/file/d/1eVtvHU7BVQKv_hEg2kOo2twMvVC8PN2R/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <iframe src="https://drive.google.com/file/d/1Cv80Yk_HJjeYHeaIELIqX9YOoEOzzpqV/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <iframe src="https://drive.google.com/file/d/1KsnjbupNiEcNd1Y3eBGHIZ733qoYfKlt/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <i>Many sketches of what's possible in terms of hacking a chopstick</i>
+    <iframe src="https://drive.google.com/file/d/1ivSHfvL63E9q4UwLePA8GRHT3zxAIiN4/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <i>The curtain element from the first idea, translated to this new one on a sleeping mask</i>
+    <iframe src="https://drive.google.com/file/d/1Dby3IQ8-lGqs5TIbd1kf3cEsjo4zAsQC/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <h4 style="background-color: #FFFF00;">CMF And Progress on the Finalized Idea</h4>
+    <p>In terms of CMF, we've decided to use a safety goggles as the base of our sleeping mask, we know that a structure
+      is necessary since we're planning to have solid objects attached to it like a rod and a motor etc. It will for
+      sure be a challenge to come up with a form that has a structure but is also comfortable to wear.</p>
+    <p>There will be an inner layer of fabric covering the goggles and anything attached to it. There will be a second
+      layer with a cushion-like design that both houses the electronics and also makes it comfortable to wear. The
+      material for the rod and the knob will be plastic and we are planning to paint the knob the apple green color to
+      indicate a <span style="background-color: #FFFF00;">point of interaction</span>.</p>
+
+    <p>I ordered the Seeed Studio Xiao BLE, since it's a very small microcontroller with BLE enabled. I developed an
+      alarm app using Android Studio and Kotlin, it pairs with the microcontroller and sends a trigger message to the
+      modules and the motor to activate them. </p>
+
+    <iframe src="https://drive.google.com/file/d/1S0vXi-V09GgAlhOtCZM7PCyBP-luJG_G/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <i>The very first iteration of the app's interface</i>
+    <iframe src="https://drive.google.com/file/d/18AIIofpVZtJLitNlLyrNVLUdSAZG9X25/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <i>A very simple circuit diagram of what we will need</i>
+
+    <iframe src="https://drive.google.com/file/d/1FHzZUPd4xsCzLFX3_o1jQGUvws1rtlRm/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <i>3D printed knob for the interaction, the user can turn this knob to lower the curtain</i>
+    <iframe src="https://drive.google.com/file/d/16xpn7531OYTRIQLwDu9hU4Qp27nCVpJs/preview" width="640" height="480"
+      allow="autoplay"></iframe>
+    <i>Put things together for the first time, attached the rod and the knob and adjusted the motor speed so that it
+      turns with a relatively slow speed but also strong enough to turn while constrained by the fabric and the wooden
+      handles.</i>
+  </div>
+</body>
+
+</html>
