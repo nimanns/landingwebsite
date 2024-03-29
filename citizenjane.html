@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="height=device-height, 
+                      width=device-width, initial-scale=1.0, 
+                      minimum-scale=1.0, maximum-scale=1.0, 
+                      user-scalable=no, target-densitydpi=device-dpi">
+  <meta name="description" content="Nima Niazi - Personal landing page - Musician/Developer">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Nima Niazi" />
+  <meta property="og:description" content="Personal Landing Page - Nima Niazi" />
+  <meta property="og:image" content="https://nimaniazi.com/static/avatar.jpg">
+  <meta property="og:url" content="https://www.nimaniazi.com" />
+  <meta property="og:site_name" content="Nima Niazi's Personal Landing Page" />
+  <meta name="twitter:title" content="Nima Niazi">
+  <meta name="twitter:description" content="Personal Landing Page - Nima Niazi">
+  <meta name="twitter:image" content="https://nimaniazi.com/static/avatar.jpg">
+  <meta property="twitter:domain" content="nimaniazi.com">
+  <meta property="twitter:url" content="https://nimaniazi.com/">
+  <link rel="stylesheet" href="style.css">
+  <!-- <script src="scirpt.js" defer></script> -->
+  <title>Nima Niazi - Personal Landing Page - Citizen Jane</title>
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+  <link rel="stylesheet" href="featured-projects.css">
+</head>
+
+
+
+<body data-first>
+  <script>
+    if (localStorage.getItem("theme")) {
+      let theme = "first";
+      switch (parseInt(localStorage.getItem("theme"))) {
+        case 0:
+          theme = "first";
+          break;
+        case 1:
+          theme = "second";
+          break;
+        case 2:
+          theme = "third";
+          break;
+        case 3:
+          theme = "fourth";
+          break;
+        case 4:
+          theme = "fifth";
+          break;
+        case 5:
+          theme = "sixth";
+          break;
+        default:
+          theme = "first";
+          localStorage.setItem("theme", "0");
+          break;
+      }
+      Object.keys(document.body.dataset).forEach((dataKey) => {
+        delete document.body.dataset[dataKey];
+      });
+      document.body.setAttribute(`data-${theme}`, true);
+    }
+  </script>
+
+  <div style="all:unset; width: 100%;" class="sections">
+    <h1 class="title"
+      style="position: absolute; z-index: 1; font-size: 56px; margin:.1em; margin-left:.5em; padding: .1em; mix-blend-mode: plus-lighter;">
+      Citizen
+      Jane</h1>
+    <div class="video-container">
+      <video style="position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      filter:blur(1em);
+      object-fit: cover;z-index: -1" src="/static/citizenjane/video.mp4" autoplay muted loop></video>
+      <video class="main-video" src="/static/citizenjane/video.mp4" autoplay muted loop></video>
+      <button id="learn-more-btn">Learn More</button>
+    </div>
+    <div data-section id="two">
+      <p style="font-size: 32px;" class="item">
+        "Citizen Jane" is a game developed by myself and Brooklyn-based songwriter and producer <a
+          href="https://jaesoto.net/" target="_blank">Jae Soto</a>, as part of her
+        release <a
+          href="https://open.spotify.com/track/0MEBqv3e8MY2VyaRIQxlXO?si=b16bef51b26b49ef&nd=1&dlsi=107b983b0a6a483c"
+          target="_blank">
+          "Working The Weekend."
+        </a>
+      </p>
+
+      <p style="font-size: 24px;" class="item">I was responsible for developing the game using Unity and
+        fabricating a controller to
+        accompany the game.</p>
+      <div class="gallery">
+        <img src="./static/citizenjane/1.jpg" alt="">
+        <img src="./static/citizenjane/2.jpg" alt="">
+        <img src="./static/citizenjane/3.jpg" alt="">
+        <img src="./static/citizenjane/4.jpg" alt="">
+        <img src="./static/citizenjane/5.jpg" alt="">
+      </div>
+      <p style="font-size: 24px;" class="item">You can play the game online <a
+          href="https://neminol.itch.io/citizen-jane">here</a>.
+      </p>
+      <div class="item technologies-used">
+        <p>Technologies used:</p>
+        <ul class="technologies-used">
+          <li>Unity</li>
+          <li>Teensy</li>
+          <li>Fusion 360</li>
+          <li>3D Printing</li>
+          <li>Laser cutting</li>
+          <li>CNC cutting</li>
+        </ul>
+
+      </div>
+    </div>
+    <!-- <div data-section id=" three">
+
+    </div> -->
+    <!-- <div data-section id="four"></div> -->
+    <!-- <div data-section id="five"></div> -->
+    <!-- <div data-section id="six"></div> -->
+    <div></div>
+  </div>
+  <div class="modal" data-modal>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var learnMoreBtn = document.getElementById('learn-more-btn');
+      var targetDiv = document.getElementById('two');
+
+      learnMoreBtn.addEventListener('click', function () {
+        targetDiv.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+  </script>
+</body>
+
+
+</html>

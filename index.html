@@ -79,127 +79,131 @@
     </div>
     <div data-section id="two">
       <div class="intro">
-        <h1 class="title span-all-rows">I'm Nima,</h1>
-        <h3 class="one">a developer</h3>
-        <h3 class="two">a musician</h3>
+        <h1 class="title span-all-rows">I'm
+          <div style="position: relative; min-width: 80px;">
+            <div style="position: absolute;">
+              <span class="name" id="n">N</span><span class="name" id="i">i</span><span class="name"
+                id="m">m</span><span class="name" id="a">a</span>
+            </div>
+            <div style="position: absolute; letter-spacing: -3px;">
+              <span style="opacity: 0;" class="name-fa">ـا</span><span style="opacity: 0;"
+                class="name-fa">ـمـ</span><span style="opacity: 0;" class="name-fa">ـیـ</span><span style="opacity: 0;"
+                class="name-fa">نـ</span>
+            </div>
+          </div>
+
+          ,
+        </h1>
+        <h3 class="one">developer</h3>
+        <h3 class="two">musician</h3>
+
+      </div>
+      <div id="intro-text">
+        <p>Versatile developer and musician who thrives at the intersection of technology and creativity. With
+          experience in full-stack web development, game development and audio programming.
+        </p>
+
+        <p style="font-size: 18px;">In addition to my professional work in the industry, I have experience working as a
+          mentor, graduate assistant and educator hosting workshops on web audio and front-end web development. I love
+          teaching and helping others with code :)</p>
+        <div id="selected-works">
+
+          <h4 style="width: 100%; border-bottom: 1px solid #909090;">Selected Works:</h4>
+          <a style="width:100px; height:100px; overflow: hidden; background-size: cover; background-position: center; background-image: url('/static/citizenjane/thumbnail.jpg');"
+            href="/citizenjane" target="_blank">
+          </a>
+          <a style="width:100px; height:100px; overflow: hidden; background-size: cover; background-position: center; background-image: url('/static/veggiesandmeat/thumbnail.jpg');"
+            href="/veggiesandmeat" target="_blank">
+          </a>
+          <a style="width:100px; height:100px; overflow: hidden; background-size: cover; background-position: center; background-image: url('/static/loopcrafthub/thumbnail.jpg');"
+            href="/loopcrafthub" target="_blank">
+          </a>
+          <a style="width:100px; height:100px; overflow: hidden; background-size: cover; background-position: center; background-image: url('/static/binaryphonestand/thumbnail.jpg');"
+            href="/binaryphonestand" target="_blank">
+          </a>
+          <a style="width:100px; height:100px; overflow: hidden; background-size: cover; background-position: center; background-image: url('/static/nila/thumbnail.jpg');"
+            href="/nila" target="_blank">
+          </a>
+          <a style="width:100px; height:100px; overflow: hidden; background-size: cover; background-position: center; background-image: url('/static/circles/thumbnail.jpg');"
+            href="/circles" target="_blank">
+          </a>
+        </div>
+
       </div>
     </div>
-    <div data-section id="three">
+    <div style="display: none;" data-section id="three">
       <a href="#three">
-        <h1>About Me</h1>
+        <h1>More About Me</h1>
+        <div class="content" style="display: grid;">
+          <div style="margin-top:45px; grid-column:1/-1;" class="card">
+            <img height="90px" width="90px"
+              style="border-radius: 50%; position:absolute; top:-50px; border:1px solid rgba(0, 0, 0, 0); pointer-events: none; box-shadow: 0 0 10px rgba(0, 0, 0, 0.37);"
+              src="/static/avatar.jpg" alt="Avatar" class="avatar">
+            <p>
+              I'm <span style="background-color:#b4bbe277;padding:.1em .4em;">Nima
+                Niazi</span>, an
+              Iranian
+              musician and
+              developer based in
+              New York. I've
+
+              been a
+              professional musician for
+              almost
+              <script>document.write(new Date().getFullYear() - 2011)</script>13 years,
+              performing live with numerous pop artists. I'm currently a graduate student and a coding lab mentor
+              at<span style="background-color:#b4bbe277;padding:.1em .4em;margin:0 0 0 .4em">
+                <a target="_blank" style="text-decoration: underline;" href="https://tisch.nyu.edu/itp">ITP</a>
+              </span>,
+              an interdisciplinarity program by
+              <span style="background-color:#b4bbe277;padding:.1em .4em;margin:0">NYU Tisch</span>
+              .
+            </p>
+
+            <p style="margin:0;padding-top:0;">
+              I embarked on my musical journey at the age of 8 by taking piano lessons with a
+              local music teacher. At the age of 16 I was bitten by the rock 'n roll bug, bought myself an electric
+              guitar
+              and have been ardently learning the ins and outs of the instrument ever since. Besides playing the
+              instrument
+              itself I'm fascinated by the diverse sound pallette it has.
+            </p>
+            <p style="margin:0;padding-top:0;">
+              I graduated with a Bachelor of Arts degree from University of Tabriz in English Language and Literature in
+              the
+              year 2015. I decided to pursue my lifelong passion, music. In 2018, I joined an Iranian pop
+              band as the lead electric guitar player and played live shows all over Iran and in neighboring countries
+              until 2021. To further expand my skills and to find artistic and creative
+              applications of the latest technology, I joined ITP.
+            </p>
+
+          </div>
+          <div class="card" id="about-me-image">
+            <img data-image="" width="100%" src="/static/SS.jpg">
+            <i style="font-size: 14px;">- Milad Concert Hall, Tehran, Iran - Dec. 2021</i>
+          </div>
+          <div class="card">
+            <p>
+              Mid 2021, I launched my own music educational web application <a target="_blank"
+                style="text-decoration: underline;" href="https://neckboard.com/">
+                Neckboard.com</a>. I am constantly working on
+              making the whole experience better and much smoother by adding constant updates.
+              I've been fascinated with programming since an early age, I started out by taking Visual Basic courses
+              when
+              I was around 16 years old. Then I dived deeper into web development and worked as a front-end developer.
+              As a musician, I also enjoy audio DSP programming and have experience
+              coding
+              with C++ and the JUCE framework to design audio effects.
+            </p>
+          </div>
+
+        </div>
+
       </a>
-      <noscript>
-
-        <div style="margin-top:45px; grid-column:1/-1;" class="card">
-          <img height="90px" width="90px"
-            style="border-radius: 50%; position:absolute; top:-50px; border:1px solid rgba(0, 0, 0, 0); pointer-events: none; box-shadow: 0 0 10px rgba(0, 0, 0, 0.37);"
-            src="/static/avatar.jpg" alt="Avatar" class="avatar">
-          <p>
-            I'm Nima Niazi, an Iranian musician and developer based in New York. I've been a professional musician for
-            almost 12 years, performing live with numerous pop artists. I'm currently a graduate student and a coding
-            lab mentor at ITP , an interdisciplinarity program by NYU Tisch .
-
-            I embarked on my musical journey at the age of 8 by taking piano lessons with a local music teacher. At the
-            age of 16 I was bitten by the rock 'n roll bug, bought myself an electric guitar and have been ardently
-            learning the ins and outs of the instrument ever since. Besides playing the instrument itself I'm fascinated
-            by the diverse sound pallette it has.
-
-            I graduated with a Bachelor of Arts degree from University of Tabriz in English Language and Literature in
-            the year 2015. I decided to pursue my lifelong passion, music. In 2018, I joined an Iranian pop band as the
-            lead electric guitar player and played live shows all over Iran and in neighboring countries until 2021. To
-            further expand my skills and to find artistic and creative applications of the
-            latest technology, I joined ITP.
-          </p>
-        </div>
-
-        <div class="card">
-          <p>
-            Mid 2021, I launched my own music educational web application <a target="_blank"
-              style="text-decoration: underline;" href="https://neckboard.com/">
-              Neckboard.com</a>. I am constantly working on making the whole experience better and much smoother by
-            adding constant updates. I've been fascinated with programming since an early age, I started out by taking
-            Visual Basic courses when I was around 16 years old. Then I dived deeper into web development and worked as
-            a front-end developer. As a musician, I also enjoy audio DSP programming and have experience coding with C++
-            and the JUCE framework to design audio effects.
-          </p>
-        </div>
-      </noscript>
-      <div class="content">
-        <div style="margin-top:45px; grid-column:1/-1;" class="card">
-          <img height="90px" width="90px"
-            style="border-radius: 50%; position:absolute; top:-50px; border:1px solid rgba(0, 0, 0, 0); pointer-events: none; box-shadow: 0 0 10px rgba(0, 0, 0, 0.37);"
-            src="/static/avatar.jpg" alt="Avatar" class="avatar">
-          <p>
-            I'm <span style="background-color:#b4bbe277;padding:.1em .4em;">Nima
-              Niazi</span>, an
-            Iranian
-            musician and
-            developer based in
-            New York. I've
-
-            been a
-            professional musician for
-            almost
-            <script>document.write(new Date().getFullYear() - 2011)</script> years,
-            performing live with numerous pop artists. I'm currently a graduate student and a coding lab mentor at<span
-              style="background-color:#b4bbe277;padding:.1em .4em;margin:0 0 0 .4em">
-              <a target="_blank" style="text-decoration: underline;" href="https://tisch.nyu.edu/itp">ITP</a>
-            </span>,
-            an interdisciplinarity program by
-            <span style="background-color:#b4bbe277;padding:.1em .4em;margin:0">NYU Tisch</span>
-            .
-          </p>
-
-          <p style="margin:0;padding-top:0;">
-            I embarked on my musical journey at the age of 8 by taking piano lessons with a
-            local music teacher. At the age of 16 I was bitten by the rock 'n roll bug, bought myself an electric
-            guitar
-            and have been ardently learning the ins and outs of the instrument ever since. Besides playing the
-            instrument
-            itself I'm fascinated by the diverse sound pallette it has.
-          </p>
-          <p style="margin:0;padding-top:0;">
-            I graduated with a Bachelor of Arts degree from University of Tabriz in English Language and Literature in
-            the
-            year 2015. I decided to pursue my lifelong passion, music. In 2018, I joined an Iranian pop
-            band as the lead electric guitar player and played live shows all over Iran and in neighboring countries
-            until 2021. To further expand my skills and to find artistic and creative
-            applications of the latest technology, I joined ITP.
-          </p>
-
-        </div>
-        <div class="card" id="about-me-image">
-          <img data-image width="100%" src="/static/SS.jpg" />
-          <i style="font-size: 14px;">- Milad Concert Hall, Tehran, Iran - Dec. 2021</i>
-        </div>
-        <div class="card">
-          <p>
-            Mid 2021, I launched my own music educational web application <a target="_blank"
-              style="text-decoration: underline;" href="https://neckboard.com/">
-              Neckboard.com</a>. I am constantly working on
-            making the whole experience better and much smoother by adding constant updates.
-            I've been fascinated with programming since an early age, I started out by taking Visual Basic courses
-            when
-            I was around 16 years old. Then I dived deeper into web development and worked as a front-end developer.
-            As a musician, I also enjoy audio DSP programming and have experience
-            coding
-            with C++ and the JUCE framework to design audio effects.
-          </p>
-        </div>
-
-      </div>
     </div>
     <div data-section id="four">
       <a href="#four">
-        <h1>Gallery</h1>
-      </a>
-      <div class="content max-width-twelve-hundred " style="">
-
-      </div>
-    </div>
-    <div data-section id="five">
-      <a href="#five">
-        <h1>My Works</h1>
+        <h1>More of My Works</h1>
       </a>
       <div class="content">
         <div class="card" style="display:flex; flex-direction:row; gap:1em;">
@@ -219,7 +223,7 @@
           </h3>
         </div>
         <div class="card" style="display:flex; flex-direction:row; gap:1em;">
-          <a style="margin-right: auto;" href="https://piclure1.herokuapp.com/" target="_blank">
+          <a style="margin-right: auto;" href="https://github.com/nimanns/piclure" target="_blank">
             <img style="display:block;" width="100px" height="100px" src="/static/piclure.png" />
           </a>
           <h3 style="margin-right: auto;">
@@ -234,6 +238,52 @@
             medds - Medication Reminder Android App
           </h3>
         </div>
+
+        <div class="card" style="display:flex; flex-direction:row; gap:1em;">
+          <a style="margin-right: auto;" href="/loopcrafthub" target="_blank">
+            <img style="display:block;" width="100px" height="100px" src="/static/loopcrafthub/thumbnail.jpg" />
+          </a>
+          <h3 style="margin-right: auto;">
+            LoopCraftHub - AI Music Generator
+          </h3>
+        </div>
+
+        <div class="card" style="display:flex; flex-direction:row; gap:1em;">
+          <a style="margin-right: auto;" href="/citizenjane" target="_blank">
+            <img style="display:block;" width="100px" height="100px" src="/static/citizenjane/thumbnail.jpg" />
+          </a>
+          <h3 style="margin-right: auto;">
+            Citizen Jane
+          </h3>
+        </div>
+
+        <div class="card" style="display:flex; flex-direction:row; gap:1em;">
+          <a style="margin-right: auto;" href="/nila" target="_blank">
+            <img style="display:block;" width="100px" height="100px" src="/static/nila/thumbnail.jpg" />
+          </a>
+          <h3 style="margin-right: auto;">
+            Nila - Smart Alarm Sleeping Mask
+          </h3>
+        </div>
+
+        <div class="card" style="display:flex; flex-direction:row; gap:1em;">
+          <a style="margin-right: auto;" href="/veggiesandmeat" target="_blank">
+            <img style="display:block;" width="100px" height="100px" src="/static/veggiesandmeat/thumbnail.jpg" />
+          </a>
+          <h3 style="margin-right: auto;">
+            Veggies & Meat - Arcade Game
+          </h3>
+        </div>
+
+        <div class="card" style="display:flex; flex-direction:row; gap:1em;">
+          <a style="margin-right: auto;" href="/binaryphonestand" target="_blank">
+            <img style="display:block;" width="100px" height="100px" src="/static/binaryphonestand/thumbnail.jpg" />
+          </a>
+          <h3 style="margin-right: auto;">
+            Binary Phone Stand
+          </h3>
+        </div>
+
         <div class="card" style="display:flex; flex-direction:row; gap:1em;">
           <a style="margin-right: auto;" href="https://nimanns.github.io/juvenile-demo/" target="_blank">
             <img style="display:block;" width="100px" height="100px" src="/static/juvenile.png" />
@@ -260,6 +310,14 @@
         </div>
       </div>
     </div>
+    <div data-section id="five">
+      <a href="#five">
+        <h1>Gallery</h1>
+      </a>
+      <div class="content max-width-twelve-hundred " style="">
+      </div>
+    </div>
+
     <div data-section id="six">
       <a href="#six">
         <h1>My Links</h1>
@@ -278,7 +336,6 @@
           <a href="https://www.youtube.com/channel/UCl9_UkNlrYO6pCGIkojxVYg" target="_blank">
             <img width="50px" height="50px" src="/static/icons/YouTube.png" />
           </a>
-
         </div>
       </div>
     </div>

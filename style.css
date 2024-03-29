@@ -53,9 +53,30 @@ div#itp {
   color: #3f3f3f;
 }
 
+div#selected-works {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 2em;
+  animation: fadeFromLeft 0.4s ease forwards;
+  transition: all 0.4s ease;
+}
+
+div#selected-works a {
+  transition: all 0.4s ease;
+  filter: brightness(1) grayscale(1);
+}
+
+div#selected-works a:hover {
+  filter: brightness(1.4) grayscale(0);
+}
+
 /* a cool looking sleek a link */
 
-body[data-first] {
+/* body[data-first] {
   --cc: white;
 }
 body[data-first] div.change-theme div#first {
@@ -82,33 +103,65 @@ body[data-first] div#five {
 body[data-first] div#six {
   --bg: #0ead69;
 }
+ */
+
+body[data-first] {
+  --cc: white;
+  --bg2: #ffffff6c;
+}
+body[data-first] div.change-theme div#first {
+  border-color: white;
+  box-shadow: 0 0 1em rgba(255, 255, 255, 0.534);
+}
+body[data-first] div#one {
+  --bg: #f8f9fa;
+  --cl: #2a2a2a;
+}
+body[data-first] div#two {
+  --bg: #e9ecef;
+  --bc: #2a2a2a;
+}
+body[data-first] div#three {
+  --bg: #dee2e6;
+}
+body[data-first] div#four {
+  --bg: #ced4da;
+}
+body[data-first] div#five {
+  --bg: #adb5bd;
+}
+body[data-first] div#six {
+  --bg: #979ea4;
+}
 
 body[data-second] {
-  --cc: white;
+  --cc: #253168;
+  color: white;
+  --bg2: #150f41;
 }
 body[data-second] div.change-theme div#second {
   border-color: white;
   box-shadow: 0 0 1em rgba(255, 255, 255, 0.534);
 }
 body[data-second] div#one {
-  --bg: #495d63;
+  --bg: #02010a;
   --cl: white;
 }
 body[data-second] div#two {
-  --bg: #629677;
-  --bc: #2a2a2a;
+  --bg: #04052e;
+  --bc: #ffffff;
 }
 body[data-second] div#three {
-  --bg: #98b6b1;
+  --bg: #140152;
 }
 body[data-second] div#four {
-  --bg: #b0c0be;
+  --bg: #22007c;
 }
 body[data-second] div#five {
-  --bg: #d7bcc8;
+  --bg: #0d00a4;
 }
 body[data-second] div#six {
-  --bg: #fac8cd;
+  --bg: #1000c0;
 }
 
 body[data-third] {
@@ -195,6 +248,7 @@ a:hover {
 }
 
 div.intro {
+  margin-top: 1em;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -211,7 +265,23 @@ div.intro h1.title {
   -webkit-animation: fadeFromLeft 1s ease forwards;
   animation: fadeFromLeft 1s ease forwards;
   opacity: 0;
+  display: flex;
+  position: relative;
 }
+
+span.name-fa {
+  display: block;
+}
+
+span.name {
+  display: block;
+  /* margin: 0 0.1em 0 0.2em; */
+}
+
+span#n {
+  /* margin-left: 0.2em; */
+}
+
 div.intro h3 {
   padding: 0 0 0 0.4em;
   border-left: 5px solid var(--bc);
@@ -235,6 +305,25 @@ div {
   align-items: center;
   width: 100%;
   height: auto;
+}
+
+div#intro-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1em;
+  margin-bottom: 2em;
+  gap: 1em;
+  max-width: 900px;
+  padding: 1em;
+}
+
+div#intro-text > p {
+  animation: fadeFromLeft 1s ease forwards;
+  font-size: 25px;
+  margin-top: 0;
+  /* text-align: justify; */
 }
 
 div[data-section] {
@@ -302,21 +391,21 @@ div.change-theme div:hover {
 div.change-theme div#first {
   background: linear-gradient(
     130deg,
-    #540d6e 0%,
-    #ee4266 40%,
-    #ffd23f 50%,
-    #3bceac 75%,
-    #0ead69 100%
+    #f8f9fa 0%,
+    #e9ecef 40%,
+    #dee2e6 50%,
+    #ced4da 75%,
+    #979ea4 100%
   );
 }
 div.change-theme div#second {
   background: linear-gradient(
     130deg,
-    #495d63 0%,
-    #629677 20%,
-    #98b6b1 50%,
-    #d7bcc8 75%,
-    #fac8cd 100%
+    #02010a 0%,
+    #04052e 20%,
+    #140152 50%,
+    #22007c 75%,
+    #0d00a4 100%
   );
 }
 div.change-theme div#third {
@@ -678,6 +767,51 @@ div.close-btn {
     opacity: 0.3;
   }
 }
+
+@keyframes char_move_to_top {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-30px) rotateX(50deg);
+    opacity: 0;
+  }
+}
+
+@keyframes char_move_from_top {
+  0% {
+    transform: translateY(-30px) rotateX(50deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px) rotateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes char_move_to_bottom {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(30px) rotateX(-50deg);
+    opacity: 0;
+  }
+}
+
+@keyframes char_move_from_bottom {
+  0% {
+    transform: translateY(30px) rotateX(-50deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px) rotateX(0);
+    opacity: 1;
+  }
+}
+
 div#about-me-image {
   position: relative;
   transform: rotate(-5deg);

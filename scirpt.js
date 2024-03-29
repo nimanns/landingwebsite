@@ -68,7 +68,7 @@ prevBtn.onclick = (e) => {
 };
 
 for (let i = 0; i < imageCount; i++) {
-  const gallery = document.querySelector("div[data-section]#four");
+  const gallery = document.querySelector("div[data-section]#five");
   const card = document.createElement("div");
   card.classList.add("card");
   const image = document.createElement("img");
@@ -331,3 +331,52 @@ document.querySelectorAll("[data-image]").forEach((image, ind) => {
     currentImageIndex = ind;
   });
 });
+
+let names_index = 0;
+let scroll_state = false;
+const times = [0.6, 0.2, 0.4, 1.4];
+function scroll_name_chars() {
+  const elements_array = document.querySelectorAll("span.name");
+  const elements_array_fa = document.querySelectorAll("span.name-fa");
+  if (!scroll_state) {
+    if (names_index % 2 == 0) {
+      elements_array[
+        names_index
+      ].style.animation = `char_move_to_top ${times[names_index]}s ease forwards`;
+      elements_array_fa[
+        names_index
+      ].style.animation = `char_move_from_bottom ${times[names_index]}s ease forwards`;
+    } else {
+      elements_array[
+        names_index
+      ].style.animation = `char_move_to_bottom ${times[names_index]}s ease forwards`;
+      elements_array_fa[
+        names_index
+      ].style.animation = `char_move_from_top ${times[names_index]}s ease forwards`;
+    }
+  } else {
+    if (names_index % 2 != 0) {
+      elements_array_fa[
+        names_index
+      ].style.animation = `char_move_to_top ${times[names_index]}s ease forwards`;
+      elements_array[
+        names_index
+      ].style.animation = `char_move_from_bottom ${times[names_index]}s ease forwards`;
+    } else {
+      elements_array_fa[
+        names_index
+      ].style.animation = `char_move_to_bottom ${times[names_index]}s ease forwards`;
+      elements_array[
+        names_index
+      ].style.animation = `char_move_from_top ${times[names_index]}s ease forwards`;
+    }
+  }
+  names_index++;
+  if (names_index === 4) {
+    names_index = 0;
+    scroll_state = !scroll_state;
+  }
+  setTimeout(scroll_name_chars, names_index > 0 ? 200 : 6000);
+}
+
+setTimeout(scroll_name_chars, 1000);

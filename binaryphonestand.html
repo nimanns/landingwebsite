@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="height=device-height, 
+                      width=device-width, initial-scale=1.0, 
+                      minimum-scale=1.0, maximum-scale=1.0, 
+                      user-scalable=no, target-densitydpi=device-dpi">
+  <meta name="description" content="Nima Niazi - Personal landing page - Musician/Developer">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Nima Niazi" />
+  <meta property="og:description" content="Personal Landing Page - Nima Niazi" />
+  <meta property="og:image" content="https://nimaniazi.com/static/avatar.jpg">
+  <meta property="og:url" content="https://www.nimaniazi.com" />
+  <meta property="og:site_name" content="Nima Niazi's Personal Landing Page" />
+  <meta name="twitter:title" content="Nima Niazi">
+  <meta name="twitter:description" content="Personal Landing Page - Nima Niazi">
+  <meta name="twitter:image" content="https://nimaniazi.com/static/avatar.jpg">
+  <meta property="twitter:domain" content="nimaniazi.com">
+  <meta property="twitter:url" content="https://nimaniazi.com/">
+  <link rel="stylesheet" href="style.css">
+  <!-- <script src="scirpt.js" defer></script> -->
+  <title>Nima Niazi - Personal Landing Page - Binary Phone Stand</title>
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+  <link rel="stylesheet" href="featured-projects.css">
+
+</head>
+
+
+
+<body data-first>
+  <script>
+    if (localStorage.getItem("theme")) {
+      let theme = "first";
+      switch (parseInt(localStorage.getItem("theme"))) {
+        case 0:
+          theme = "first";
+          break;
+        case 1:
+          theme = "second";
+          break;
+        case 2:
+          theme = "third";
+          break;
+        case 3:
+          theme = "fourth";
+          break;
+        case 4:
+          theme = "fifth";
+          break;
+        case 5:
+          theme = "sixth";
+          break;
+        default:
+          theme = "first";
+          localStorage.setItem("theme", "0");
+          break;
+      }
+      Object.keys(document.body.dataset).forEach((dataKey) => {
+        delete document.body.dataset[dataKey];
+      });
+      document.body.setAttribute(`data-${theme}`, true);
+    }
+  </script>
+
+  <div style="all:unset; width: 100%;" class="sections">
+    <h1 class="title"
+      style="position: absolute; z-index: 1; font-size: 56px; margin:.1em; margin-left:.5em; padding: .1em; mix-blend-mode: plus-lighter;">
+      Binary Phone Stand</h1>
+    <div class="video-container">
+      <video style="position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      filter:blur(1em);
+      object-fit: cover;z-index: -1" src="/static/binaryphonestand/video.mp4" autoplay muted loop></video>
+      <video class="main-video" src="/static/binaryphonestand/video.mp4" autoplay muted loop></video>
+      <button id="learn-more-btn">Learn More</button>
+    </div>
+    <div data-section id="two">
+      <p style="font-size: 32px;" class="item">A phone stand that shows your notifications in binary or Morse code.
+      </p>
+
+      <p style="font-size: 24px;" class="item">The idea behind this project was to design a <a
+          href="https://en.wikipedia.org/wiki/Chind%C5%8Dgu" target="_blank">
+          Chindōgu
+        </a>, an un-useless device for our phones.</p>
+      <p></p>
+      <div class="gallery">
+        <img src="./static/binaryphonestand/1.jpg" alt="">
+        <img src="./static/binaryphonestand/2.jpg" alt="">
+      </div>
+      <div class="item technologies-used">
+        <p>Technologies used:</p>
+        <ul class="technologies-used">
+          <li>Arduino</li>
+          <li>Android Studio</li>
+          <li>Fusion 360</li>
+          <li>Laser cutting</li>
+          <li>Kotlin</li>
+          <li>C++</li>
+        </ul>
+
+      </div>
+    </div>
+    <!-- <div data-section id=" three">
+
+    </div> -->
+    <!-- <div data-section id="four"></div> -->
+    <!-- <div data-section id="five"></div> -->
+    <!-- <div data-section id="six"></div> -->
+    <div></div>
+  </div>
+  <div class="modal" data-modal>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var learnMoreBtn = document.getElementById('learn-more-btn');
+      var targetDiv = document.getElementById('two');
+
+      learnMoreBtn.addEventListener('click', function () {
+        targetDiv.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+  </script>
+</body>
+
+
+</html>
