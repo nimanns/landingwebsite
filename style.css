@@ -165,36 +165,36 @@ body[data-second] div#six {
 }
 
 body[data-third] {
-  background-color: #3a0ca3;
-  --cc: #493080;
+  background-color: #232929;
+  --cc: #255b5d;
 }
 body[data-third] div.change-theme div#third {
   border-color: white;
   box-shadow: 0 0 1em rgba(255, 255, 255, 0.534);
 }
+
 body[data-third] div#one {
-  --bg: #f72585;
+  --bg: #ecf4d6;
 }
 body[data-third] div#two {
-  --bg: #b5179e;
-  --cl: white;
+  --bg: #9ad0c2;
+  --cl: #505050;
   --bc: #505050;
-  --bc: #e873d5;
 }
 body[data-third] div#three {
-  --bg: #8333b9;
-  --cl: white;
+  --bg: #2d9596;
+  --cl: #2b8b8d;
 }
 body[data-third] div#four {
-  --bg: #7209b7;
+  --bg: #2b8b8d;
   --cl: white;
 }
 body[data-third] div#five {
-  --bg: #560bad;
+  --bg: #327b7d;
   --cl: white;
 }
 body[data-third] div#six {
-  --bg: #3a0ca3;
+  --bg: #265073;
   --cl: white;
 }
 
@@ -412,11 +412,11 @@ div.change-theme div#second {
 div.change-theme div#third {
   background: linear-gradient(
     130deg,
-    #f72585 0%,
-    #b5179e 20%,
-    #7209b7 50%,
-    #560bad 75%,
-    #3a0ca3 100%
+    #ecf4d6 0%,
+    #9ad0c2 20%,
+    #2d9596 50%,
+    #327b7d 75%,
+    #255b5d 100%
   );
 }
 
