@@ -158,6 +158,18 @@
         loading();
 
         window.onload = function () {
+
+          if (window.innerWidth < 700) {
+            let newWidth = window.innerWidth * 0.8;
+            let newHeight = newWidth / aspectRatio;
+
+            canvas.width = newWidth;
+            canvas.height = newHeight;
+          } else {
+            canvas.width = MAX_WIDTH;
+            canvas.height = MAX_HEIGHT;
+          }
+
           cancelAnimationFrame(animation_frame_id);
 
           // Create a new image object
