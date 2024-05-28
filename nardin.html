@@ -123,8 +123,6 @@
         canvas.width = MAX_WIDTH;
         canvas.height = MAX_HEIGHT;
         var context = canvas.getContext('2d');
-        const centerX = canvas.width / 2;
-        const centerY = canvas.height / 2;
         const radius = 40;
         const lineWidth = 8;
         const lineCount = 12;
@@ -132,6 +130,9 @@
         let animation_frame_id = null;
 
         function loading() {
+
+          const centerX = canvas.width / 2;
+          const centerY = canvas.height / 2;
           context.clearRect(0, 0, canvas.width, canvas.height);
           for (let i = 0; i < lineCount; i++) {
             const angle = (i * Math.PI * 2 / lineCount) + angleOffset;
