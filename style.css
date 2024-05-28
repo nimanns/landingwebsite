@@ -167,6 +167,7 @@ body[data-second] div#six {
 body[data-third] {
   background-color: #232929;
   --cc: #255b5d;
+  --bg2: #c4dce0;
 }
 body[data-third] div.change-theme div#third {
   border-color: white;

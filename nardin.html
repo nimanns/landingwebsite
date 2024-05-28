@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="height=device-height, 
+                      width=device-width, initial-scale=1.0, 
+                      minimum-scale=1.0, maximum-scale=1.0, 
+                      user-scalable=no, target-densitydpi=device-dpi">
+  <meta name="description" content="Nima Niazi - Personal landing page - Musician/Developer">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Nima Niazi" />
+  <meta property="og:description" content="Personal Landing Page - Nima Niazi" />
+  <meta property="og:image" content="https://nimaniazi.com/static/avatar.jpg">
+  <meta property="og:url" content="https://www.nimaniazi.com" />
+  <meta property="og:site_name" content="Nima Niazi's Personal Landing Page" />
+  <meta name="twitter:title" content="Nima Niazi">
+  <meta name="twitter:description" content="Personal Landing Page - Nima Niazi">
+  <meta name="twitter:image" content="https://nimaniazi.com/static/avatar.jpg">
+  <meta property="twitter:domain" content="nimaniazi.com">
+  <meta property="twitter:url" content="https://nimaniazi.com/">
+  <link rel="stylesheet" href="style.css">
+  <!-- <script src="scirpt.js" defer></script> -->
+  <title>Nima Niazi - Personal Landing Page - Nardin</title>
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+  <link rel="stylesheet" href="featured-projects.css">
+</head>
+
+
+
+<body data-first>
+  <script>
+    if (localStorage.getItem("theme")) {
+      let theme = "first";
+      switch (parseInt(localStorage.getItem("theme"))) {
+        case 0:
+          theme = "first";
+          break;
+        case 1:
+          theme = "second";
+          break;
+        case 2:
+          theme = "third";
+          break;
+        case 3:
+          theme = "fourth";
+          break;
+        case 4:
+          theme = "fifth";
+          break;
+        case 5:
+          theme = "sixth";
+          break;
+        default:
+          theme = "first";
+          localStorage.setItem("theme", "0");
+          break;
+      }
+      Object.keys(document.body.dataset).forEach((dataKey) => {
+        delete document.body.dataset[dataKey];
+      });
+      document.body.setAttribute(`data-${theme}`, true);
+    }
+  </script>
+
+  <div style="all:unset; width: 100%;" class="sections">
+    <h1 class="title"
+      style="position: absolute; z-index: 1; font-size: 56px; margin:.1em; margin-left:.5em; padding: .1em; ">
+      Nardin</h1>
+    <div id="one" class="video-container" style="flex-wrap: wrap; padding-top:1em">
+      <canvas id="diagram" style="margin:5em;box-shadow: 0 0 10em -5em rgba(0, 0, 0, 0.362);"></canvas>
+
+      <button style="bottom:1em" id="learn-more-btn">Learn More</button>
+    </div>
+    <div data-section id="two">
+      <script>
+        const information = { 1: "Display to show the output waveform and selected effects and information about the effect (On/Off, Wet/Dry, etc.).", 2: "Mechanical MX key switches for effects controls (top row), note programming (mid row) and buffer select (bottom row).", 3: "Touch strip to control the selected effects parameter and/or input changes into a buffer to create an automation." }
+        const MAX_WIDTH = 483;
+        const MAX_HEIGHT = 711;
+
+        const circle1 = { x: 0, y: 0, outerRadius: 30, innerRadius: 20, hovered_on: false, id: 1 };
+        const circle2 = { x: 0, y: 0, outerRadius: 30, innerRadius: 20, hovered_on: false, id: 2 };
+        const circle3 = { x: 0, y: 0, outerRadius: 30, innerRadius: 20, hovered_on: false, id: 3 };
+        const circles = [circle1, circle2, circle3];
+
+
+        const info = document.createElement('div');
+        info.style.position = 'absolute';
+        info.style.width = "fit-content";
+        info.style.backgroundColor = 'rgba(0, 0, 0, 1)';
+        info.style.color = 'white';
+        info.style.padding = '0.5em';
+        info.style.maxWidth = '200px';
+        info.style.userSelect = 'none';
+        info.style.pointerEvents = 'none';
+        info.style.display = 'none';
+        document.querySelector('.video-container').appendChild(info);
+
+        window.onresize = function () {
+          let canvas = document.getElementById('diagram');
+          let aspectRatio = MAX_WIDTH / MAX_HEIGHT;
+
+          info.style.display = 'none';
+
+          for (let circle of circles) {
+            circle.hovered_on = false;
+          }
+
+          if (window.innerWidth < 700) {
+            let newWidth = window.innerWidth * 0.8;
+            let newHeight = newWidth / aspectRatio;
+
+            canvas.width = newWidth;
+            canvas.height = newHeight;
+          } else {
+            canvas.width = MAX_WIDTH;
+            canvas.height = MAX_HEIGHT;
+          }
+        }
+
+        var canvas = document.getElementById('diagram');
+        canvas.width = MAX_WIDTH;
+        canvas.height = MAX_HEIGHT;
+        var context = canvas.getContext('2d');
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        const radius = 40;
+        const lineWidth = 8;
+        const lineCount = 12;
+        let angleOffset = 0;
+        let animation_frame_id = null;
+
+        function loading() {
+          context.clearRect(0, 0, canvas.width, canvas.height);
+          for (let i = 0; i < lineCount; i++) {
+            const angle = (i * Math.PI * 2 / lineCount) + angleOffset;
+            const lineLength = radius / 2;
+
+            context.beginPath();
+            context.moveTo(
+              centerX + radius * Math.cos(angle),
+              centerY + radius * Math.sin(angle)
+            );
+            context.lineTo(
+              centerX + (radius + lineLength) * Math.cos(angle),
+              centerY + (radius + lineLength) * Math.sin(angle)
+            );
+            context.strokeStyle = `rgba(0, 0, 0, ${i / lineCount})`;
+            context.lineWidth = lineWidth;
+            context.stroke();
+          }
+          angleOffset += Math.PI / 30;
+          animation_frame_id = requestAnimationFrame(loading);
+        }
+
+        loading();
+
+        window.onload = function () {
+          cancelAnimationFrame(animation_frame_id);
+
+          // Create a new image object
+          var image = new Image();
+
+          // Set the source of the image
+          image.src = '/static/nardin/image.jpg'; // Replace with the path to your image
+          const downsize_scale = 1.1;
+
+          let selected_id = 0;
+
+          // Draw the image onto the canvas once it has loaded
+
+          let image_x_zero, image_y_zero;
+          image.onload = draw;
+
+          function draw() {
+            const downscaled_width = canvas.width / downsize_scale;
+            const downscaled_height = canvas.height / downsize_scale;
+            image_x_zero = (canvas.width - downscaled_width) / 2;
+            image_y_zero = (canvas.height - downscaled_height) / 2;
+            context.drawImage(image, image_x_zero, image_y_zero, downscaled_width, downscaled_height);
+
+            // Draw circle on the image
+            circle1.x = image_x_zero + (downscaled_width / 2.5);
+            circle1.y = image_y_zero + (downscaled_height / 4.8);
+
+            circle2.x = image_x_zero + (downscaled_width / 2);
+            circle2.y = image_y_zero + (downscaled_height / 2);
+
+            circle3.x = image_x_zero + (downscaled_width / 2.5);
+            circle3.y = image_y_zero + (downscaled_height / 1.26);
+
+            circle_hovered(circles, canvas);
+            draw_circles(circles, context);
+            requestAnimationFrame(draw);
+          };
+
+
+          canvas.addEventListener("mousemove", function (e) {
+            var rect = canvas.getBoundingClientRect(),   // get abs. position of canvas
+              x = e.clientX - (rect.left),             // adjust mouse-position
+              y = e.clientY - (rect.top);
+
+            for (circle of circles) {
+              context.beginPath();
+              context.arc(circle.x, circle.y, circle.outerRadius, 0, 2 * Math.PI);
+              context.closePath();
+              if (context.isPointInPath(x, y)) {
+                circle.hovered_on = true;
+                info.innerHTML = `${information[circle.id]}`;
+                info.style.display = 'block';
+                info.style.left = `${circle.x + rect.left}px`;
+                info.style.top = `${circle.y + rect.top}px`;
+              } else {
+                circle.hovered_on = false;
+              }
+            }
+          });
+
+
+        };
+
+
+        function cubic_bezier(t, p0, p1, p2, p3) {
+          const u = 1 - t;
+          return (u * u * u * p0) +
+            (3 * u * u * t * p1) +
+            (3 * u * t * t * p2) +
+            (t * t * t * p3);
+        }
+
+        function bezier_lerp(start, end, t, c1, c2) {
+          const p1 = start + c1 * (end - start);
+          const p2 = start + c2 * (end - start);
+          return cubic_bezier(t, start, p1, p2, end);
+        }
+
+        function draw_circles(circles, ctx) {
+          for (const circle of circles) {
+            ctx.beginPath();
+            ctx.arc(circle.x, circle.y, circle.outerRadius, 0, 2 * Math.PI);
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+            ctx.fill();
+            ctx.closePath();
+
+            ctx.beginPath();
+            ctx.arc(circle.x, circle.y, circle.innerRadius, 0, 2 * Math.PI);
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+            ctx.fill();
+            ctx.closePath();
+          }
+        }
+
+        const start = 0;
+        const end = 100;
+        const t = 0.5; // Midway
+        const c1 = 0.25; // Control point 1, 25% of the way between start and end
+        const c2 = 0.75; // Control point 2, 75% of the way between start and end
+
+        function circle_hovered(circles, canvas) {
+          let is_one_hovered = false;
+          for (const circle of circles) {
+            if (circle.hovered_on) {
+              is_one_hovered = true;
+              circle.outerRadius = bezier_lerp(circle.outerRadius, 35, t, c1, c2);
+              circle.innerRadius = bezier_lerp(circle.innerRadius, 35, t, c1, c2);
+            } else {
+              circle.outerRadius = bezier_lerp(circle.outerRadius, 30, t, c1, c2);
+              circle.innerRadius = bezier_lerp(circle.innerRadius, 20, t, c1, c2);
+            }
+          }
+
+          if (!is_one_hovered) {
+            canvas.style.cursor = 'default';
+            info.style.display = 'none';
+          } else {
+            canvas.style.cursor = 'pointer';
+          }
+        }
+
+      </script>
+      <p style="font-size: 32px;" class="item">
+
+      </p>
+      <p class="item">
+        <strong>Nardin</strong>, a musical interface that relies on automated values to shape its sound in real-time. It
+        utilizes
+        algorithms to automatically adjust various audio effects like filters, delays, reverb and a ring modulation.
+        The
+        performer can control several dimensions of these effects simultaneously through a touch interface and three
+        memory buffers. The instrument generates an audio output that continuously morphs and evolves based on the
+        dynamic mixing of the adjustable parameters. This multidimensional control provides an expansive palette for
+        shaping the timbre, texture and characteristics of the sound during a live performance.
+      </p>
+      <h2>Video Demo</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/PzPLSbSZdks?si=h72q95KF16rqBkqW"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <p style="font-size: 24px;" class="item">
+      </p>
+
+      <div class="item technologies-used">
+        <p>Technologies used:</p>
+        <ul class="technologies-used">
+          <li>Daisy Seed Development Board</li>
+          <li>C++</li>
+          <li>Autodesk Fusion 360</li>
+          <li>3D Printing</li>
+          <li>Autodesk Eagle</li>
+          <li>PCB printing</li>
+        </ul>
+
+      </div>
+    </div>
+    <!-- <div data-section id=" three">
+
+    </div> -->
+    <!-- <div data-section id="four"></div> -->
+    <!-- <div data-section id="five"></div> -->
+    <!-- <div data-section id="six"></div> -->
+    <div></div>
+  </div>
+  <div class="modal" data-modal>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var learnMoreBtn = document.getElementById('learn-more-btn');
+      var targetDiv = document.getElementById('two');
+
+      learnMoreBtn.addEventListener('click', function () {
+        targetDiv.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+  </script>
+</body>
+
+
+</html>
