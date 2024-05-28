@@ -72,13 +72,14 @@
     <div id="one" class="video-container" style="flex-wrap: wrap; padding-top:1em">
       <canvas id="diagram" style="margin:5em;box-shadow: 0 0 10em -5em rgba(0, 0, 0, 0.362);"></canvas>
 
-      <button style="bottom:1em" id="learn-more-btn">Learn More</button>
+      <button id="learn-more-btn">Learn More</button>
     </div>
     <div data-section id="two">
       <script>
         const information = { 1: "Display to show the output waveform and selected effects and information about the effect (On/Off, Wet/Dry, etc.).", 2: "Mechanical MX key switches for effects controls (top row), note programming (mid row) and buffer select (bottom row).", 3: "Touch strip to control the selected effects parameter and/or input changes into a buffer to create an automation." }
         const MAX_WIDTH = 483;
         const MAX_HEIGHT = 711;
+        let aspect_ratio = MAX_WIDTH / MAX_HEIGHT;
 
         const circle1 = { x: 0, y: 0, outerRadius: 30, innerRadius: 20, hovered_on: false, id: 1 };
         const circle2 = { x: 0, y: 0, outerRadius: 30, innerRadius: 20, hovered_on: false, id: 2 };
@@ -100,7 +101,6 @@
 
         window.onresize = function () {
           let canvas = document.getElementById('diagram');
-          let aspectRatio = MAX_WIDTH / MAX_HEIGHT;
 
           info.style.display = 'none';
 
@@ -110,7 +110,7 @@
 
           if (window.innerWidth < 700) {
             let newWidth = window.innerWidth * 0.8;
-            let newHeight = newWidth / aspectRatio;
+            let newHeight = newWidth / aspect_ratio;
 
             canvas.width = newWidth;
             canvas.height = newHeight;
@@ -161,7 +161,7 @@
 
           if (window.innerWidth < 700) {
             let newWidth = window.innerWidth * 0.8;
-            let newHeight = newWidth / aspectRatio;
+            let newHeight = newWidth / aspect_ratio;
 
             canvas.width = newWidth;
             canvas.height = newHeight;
@@ -295,7 +295,7 @@
       <p style="font-size: 32px;" class="item">
 
       </p>
-      <p class="item">
+      <p style="padding-left:2em; padding-right: 2em;" class="item">
         <strong>Nardin</strong>, a musical interface that relies on automated values to shape its sound in real-time. It
         utilizes
         algorithms to automatically adjust various audio effects like filters, delays, reverb and a ring modulation.
@@ -306,10 +306,13 @@
         shaping the timbre, texture and characteristics of the sound during a live performance.
       </p>
       <h2>Video Demo</h2>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/PzPLSbSZdks?si=h72q95KF16rqBkqW"
-        title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div style="display: flex; justify-content: center; width:80%; max-width: 600px;">
+        <iframe style="aspect-ratio: 16/9; width: 100% !important;"
+          src="https://www.youtube.com/embed/PzPLSbSZdks?si=h72q95KF16rqBkqW" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
       <p style="font-size: 24px;" class="item">
       </p>
 
