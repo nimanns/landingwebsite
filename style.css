@@ -181,6 +181,7 @@ body[data-third] div#two {
   --bg: #9ad0c2;
   --cl: #505050;
   --bc: #505050;
+  --cl2: white;
 }
 body[data-third] div#three {
   --bg: #2d9596;
