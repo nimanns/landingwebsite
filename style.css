@@ -1,8 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&family=Urbanist:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cairo&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Cairo&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
+
 :root {
   --cubicbez: cubic-bezier(0.33, 0.95, 0.72, 0.99);
   --border-size: 1px;
+  --font-family: "Cairo", sans-serif;
 }
 
 *,
@@ -25,7 +28,7 @@ body {
   height: auto;
   display: flex;
   flex-direction: column;
-  font-family: "Cairo", sans-serif;
+  font-family: var(--font-family);
   transition: font-size 0.4s ease;
   align-items: center;
 }
@@ -606,6 +609,7 @@ form#contact-form textarea {
   border: none;
   resize: vertical;
   font-size: 16px;
+  font-family: var(--font-family);
 }
 
 form#contact-form button[type="submit"] {
