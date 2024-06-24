@@ -385,6 +385,7 @@ setTimeout(scroll_name_chars, 1000);
 const contactForm = document.getElementById("contact-form");
 const collapseBtn = document.getElementById("collapse-form");
 
+console.log(collapseBtn);
 collapseBtn.addEventListener("click", (e) => {
   e.preventDefault();
   contactForm.classList.toggle("collapsed");
@@ -412,7 +413,7 @@ document
       .then((response) => response.text())
       .then((data) => {
         const resultDiv = document.getElementById("result");
-        resultDiv.textContent = data;
+        resultDiv.textContent = "Message sent! Thank you for reaching out 😊";
         resultDiv.className = "success";
       })
       .catch((error) => {
