@@ -603,13 +603,20 @@ form#contact-form {
 
 form#contact-form input,
 form#contact-form textarea {
-  padding: 1em;
+  padding: 0.5em;
   background-color: var(--bg);
   color: var(--cl);
   border: none;
   resize: vertical;
   font-size: 16px;
   font-family: var(--font-family);
+}
+
+form#contact-form input:focus,
+form#contact-form textarea:focus,
+form#contact-form button[type="submit"]:focus {
+  outline: 1px solid var(--bc);
+  border-radius: 0;
 }
 
 form#contact-form button[type="submit"] {
