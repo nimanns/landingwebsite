@@ -385,7 +385,6 @@ setTimeout(scroll_name_chars, 1000);
 const contactForm = document.getElementById("contact-form");
 const collapseBtn = document.getElementById("collapse-form");
 
-console.log(collapseBtn);
 collapseBtn.addEventListener("click", (e) => {
   e.preventDefault();
   contactForm.classList.toggle("collapsed");
@@ -402,7 +401,7 @@ document
       subject: document.getElementById("subject").value,
       body: document.getElementById("body").value,
     };
-    console.log(formData);
+
     fetch("https://scrapenimanns-c8544d688b32.herokuapp.com/send-email", {
       method: "POST",
       headers: {
