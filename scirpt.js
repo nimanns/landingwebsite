@@ -388,6 +388,7 @@ const collapseBtn = document.getElementById("collapse-form");
 collapseBtn.addEventListener("click", (e) => {
   e.preventDefault();
   contactForm.classList.toggle("collapsed");
+  if (!e.target.classList.contains("collapsed")) e.target.scrollIntoView();
 });
 
 document
