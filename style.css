@@ -69,7 +69,6 @@ div#selected-works {
   align-items: center;
   justify-content: center;
   gap: 1em;
-  margin-top: 2em;
   animation: fadeFromLeft 0.4s ease forwards;
   transition: all 0.4s ease;
 }
