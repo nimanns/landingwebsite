@@ -391,16 +391,29 @@ collapseBtn.addEventListener("click", (e) => {
   if (!contactForm.classList.contains("collapsed")) e.target.scrollIntoView();
 });
 
+var captchaVerified = () => {
+  contactForm
+    .querySelector("button[type='submit']")
+    .removeAttribute("disabled");
+};
+
 document
   .getElementById("contact-form")
   .addEventListener("submit", function (e) {
     e.preventDefault();
+
+    let recaptchaRes = grecaptcha.getResponse();
+    if (!recaptchaRes) {
+      alert("Please complete the reCAPTCHA verification");
+      return;
+    }
 
     const formData = {
       sender_name: document.getElementById("sender-name").value,
       sender_email: document.getElementById("sender-email").value,
       subject: document.getElementById("subject").value,
       body: document.getElementById("body").value,
+      g_recaptcha_response: recaptchaRes,
     };
 
     fetch("https://scrapenimanns-c8544d688b32.herokuapp.com/send-email", {

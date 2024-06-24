@@ -25,6 +25,7 @@
   <script src="scirpt.js" defer></script>
   <title>Nima Niazi - Personal Landing Page</title>
   <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <style>
     div#selected-works a {
       width: calc(25% - 10px) !important;
@@ -145,7 +146,9 @@
 
           <label for="body">Message:</label>
           <textarea id="body" name="body" rows="5" required></textarea>
-          <button type="submit">Submit</button>
+          <div class="g-recaptcha" data-sitekey="6LfMfQAqAAAAACesXG-ykgpKMJotYnfELpYinvhk"
+            data-callback="captchaVerified"></div>
+          <button type="submit" disabled>Submit</button>
           <div id="result"></div>
         </form>
 

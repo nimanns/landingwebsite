@@ -631,6 +631,10 @@ form#contact-form button[type="submit"] {
   transition: all 0.4s ease;
 }
 
+form#contact-form button[type="submit"]:disabled {
+  filter: contrast(0.5);
+}
+
 form#contact-form.collapsed {
   display: none;
 }
