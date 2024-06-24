@@ -380,3 +380,46 @@ function scroll_name_chars() {
 }
 
 setTimeout(scroll_name_chars, 1000);
+
+//contact form
+const contactForm = document.getElementById("contact-form");
+const collapseBtn = document.getElementById("collapse-form");
+
+collapseBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  contactForm.classList.toggle("collapsed");
+});
+
+document
+  .getElementById("contact-form")
+  .addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const formData = {
+      sender_name: document.getElementById("sender-name").value,
+      sender_email: document.getElementById("sender-email").value,
+      subject: document.getElementById("subject").value,
+      body: document.getElementById("body").value,
+    };
+    console.log(formData);
+    fetch("https://scrapenimanns-c8544d688b32.herokuapp.com/send-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => response.text())
+      .then((data) => {
+        const resultDiv = document.getElementById("result");
+        resultDiv.textContent = data;
+        resultDiv.className = "success";
+      })
+      .catch((error) => {
+        const resultDiv = document.getElementById("result");
+        resultDiv.textContent =
+          "Error: " +
+          "Failed to send the message at the moment. Please try again later.";
+        resultDiv.className = "error";
+      });
+  });

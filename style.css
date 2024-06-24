@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Cairo&display=swap");
 :root {
   --cubicbez: cubic-bezier(0.33, 0.95, 0.72, 0.99);
+  --border-size: 1px;
 }
 
 *,
@@ -287,7 +288,7 @@ span#n {
 
 div.intro h3 {
   padding: 0 0 0 0.4em;
-  border-left: 5px solid var(--bc);
+  border-left: var(--border-size) solid var(--bc);
 }
 div.intro h3.one {
   -webkit-animation: fadeFromLeft 1s 0.5s ease forwards;
@@ -579,6 +580,59 @@ div#image-wrapper button#prev-btn {
   left: 0;
   -webkit-animation: prevAnima 2s cubic-bezier(0.23, 1, 0.32, 1);
   animation: prevAnima 2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+form#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 100%;
+  margin: 1em;
+  padding: 1em;
+  background-color: var(--bg2);
+}
+
+form#contact-form input,
+form#contact-form textarea {
+  padding: 1em;
+  background-color: var(--bg);
+  color: var(--cl);
+  border: none;
+  resize: vertical;
+  font-size: 16px;
+}
+
+form#contact-form button[type="submit"] {
+  all: unset;
+  text-align: center;
+  padding: 0.5em 2em;
+  width: fit-content;
+  margin: 1em auto;
+  background-color: var(--bg);
+  color: var(--cl);
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+form#contact-form.collapsed {
+  display: none;
+}
+
+#result {
+  margin-top: 20px;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
 }
 
 img.modal-image {

@@ -120,16 +120,37 @@
           mentor, graduate assistant and educator hosting workshops on web audio and front-end web development. I love
           teaching and helping others with code :)</p>
 
-        <p style="padding-top:0; margin-top:0;font-size: 20px; width:100%"> <a href="mailto:contact@nimaniazi.com">
+        <div style="display:flex; gap:.5em; user-select: none; padding-top:0; margin-top:0;font-size: 20px; width:100%">
+          <a href="mailto:contact@nimaniazi.com">
             <span style="background-color:var(--cc); color:var(--cl2);padding:.1em .4em;">
-              contact [at] nimaniazi.com
-            </span>
+              contact [at] nimaniazi.com</span>
           </a>
 
-        </p>
+          or use <a id="collapse-form">
+            <span style="user-select: none; background-color:var(--cc); color:var(--cl2);padding:.1em .4em;">this
+              form</span>
+          </a>
+        </div>
+        <form id="contact-form" class="collapsed">
+          <label for="sender-name">Name (Required):</label>
+          <input type="text" id="sender-name" name="senderName" required>
+
+          <label for="sender-email">Email (Required):</label>
+          <input type="email" id="sender-email" name="sender-email" required>
+
+          <label for="subject">Subject (Optional):</label>
+          <input type="text" id="subject" name="subject">
+
+          <label for="body">Message:</label>
+          <textarea id="body" name="body" rows="5" required></textarea>
+          <button type="submit">Submit</button>
+          <div id="result"></div>
+        </form>
+
+
         <div id="selected-works">
 
-          <h4 style="width: 100%; border-bottom: 5px solid var(--bc);">Selected Works:</h4>
+          <h4 style="width: 100%; border-bottom: var(--border-size) solid var(--bc);">Selected Works:</h4>
           <a style="width:100px; height:100px; overflow: hidden; background-size: cover; background-position: center; background-image: url('/static/nardin/thumbnail.jpg');"
             href="/nardin" target="_blank">
           </a>
