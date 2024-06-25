@@ -69,20 +69,33 @@ div#selected-works {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 1em;
   animation: fadeFromLeft 0.4s ease forwards;
   transition: all 0.4s ease;
+  padding: 0 25px 25px 25px;
+}
+
+div#selected-works > div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: fit-content;
+  justify-content: center;
+  gap: 0.5em;
+  /* max-width: fit-content; */
+  flex-grow: 1;
 }
 
 div#selected-works a {
-  transition: all 0.4s ease;
+  transition: filter 0.4s ease, transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
   filter: brightness(1) grayscale(1);
 }
 
 div#selected-works a:hover {
   filter: brightness(1.4) grayscale(0);
+  transform: translate(0, -2px);
 }
 
 /* a cool looking sleek a link */
@@ -522,6 +535,9 @@ div.card {
   flex-direction: column;
 }
 
+div#four .card > a {
+}
+
 div.links a {
   transition: filter 0.4s ease;
   filter: drop-shadow(2px 4px 6px rgba(185, 185, 185, 0));
@@ -546,6 +562,7 @@ div#image-wrapper {
   background-color: rgba(97, 97, 97, 0.466);
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3803921569);
 }
+
 div#image-wrapper button#close-btn {
   all: unset;
   position: absolute;
