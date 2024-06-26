@@ -388,7 +388,11 @@ const collapseBtn = document.getElementById("collapse-form");
 collapseBtn.addEventListener("click", (e) => {
   e.preventDefault();
   contactForm.classList.toggle("collapsed");
-  if (!contactForm.classList.contains("collapsed")) e.target.scrollIntoView();
+  if (!contactForm.classList.contains("collapsed")) {
+    e.target.scrollIntoView();
+  } else {
+    window.scrollTo(0, 0);
+  }
 });
 
 var captchaVerified = () => {
