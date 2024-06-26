@@ -1,3 +1,4 @@
 /samurai/* http://45.87.41.58:3000/ 200
 /useless/* http://45.87.41.58:4242/ 200
-/resume/* https://docs.google.com/document/d/1rWg84cCAApdxvLKp7FGh97MIrDOjab690hxBldB3V7E/edit?usp=sharing
+/resume/* https://docs.google.com/document/d/1rWg84cCAApdxvLKp7FGh97MIrDOjab690hxBldB3V7E/edit?usp=sharing 200
+/static/ / 300
