@@ -432,6 +432,8 @@ document
         const resultDiv = document.getElementById("result");
         resultDiv.textContent = "Message sent! Thank you for reaching out 😊";
         resultDiv.className = "success";
+        grecaptcha.reset();
+        contactForm.reset();
       })
       .catch((error) => {
         const resultDiv = document.getElementById("result");
