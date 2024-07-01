@@ -55,6 +55,9 @@ div#navbar {
   font-size: 20px;
   text-decoration: none;
   color: #3f3f3f;
+  display: flex;
+  flex-direction: row;
+  gap: 0.2em;
 }
 
 p#contact-text {
