@@ -269,9 +269,15 @@ p {
 }
 
 a {
+  text-decoration: underline;
+  color: var(--cl);
+}
+
+*[data-section] > a{
   text-decoration: none;
   color: var(--cl);
 }
+
 a:hover {
   cursor: pointer;
   text-decoration: underline;
